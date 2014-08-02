@@ -18,6 +18,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 GITHUB_USERNAME, TWITTER_USERNAME = "jxnl", "jxnlco"
+SHOW_ARCHIVES = True
 
 MARKUP = ('md', 'ipynb')
 THEME = './themes/middle'
