@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>jxnl.co</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-07-02T00:00:00+02:00</updated><entry><title>Better than linspace</title><link href="/better-linspace.html" rel="alternate"></link><updated>2014-07-02T00:00:00+02:00</updated><author><name>Jason Liu</name></author><id>tag:,2014-07-02:better-linspace.html</id><summary type="html">&lt;style type="text/css"&gt;.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
+<feed xmlns="http://www.w3.org/2005/Atom"><title>jxnl.co</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-07-23T00:00:00+02:00</updated><entry><title>Better than linspace</title><link href="/posts/2014/Jul/better-linspace/" rel="alternate"></link><updated>2014-07-23T00:00:00+02:00</updated><author><name>Jason Liu</name></author><id>tag:,2014-07-23:posts/2014/Jul/better-linspace/</id><summary type="html">&lt;style type="text/css"&gt;.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
 .clearfix:after{clear:both}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}
 .input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
@@ -4713,35 +4713,4 @@ iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiFv9L1brNCbMot1nAAAAAElFTkSuQmCC
 &lt;p&gt;With just 10 more points than our initial static interpolation we are been able to get incredible resolution at the maximum and minimums where the function has a very large acceleration. We also see that on the sides of the first bump and after the second, we dont use many points since we know that they behave linearly as a result of constant velocity!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[1]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Thanks!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;
-Thanks!
-
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;/div&gt;</summary><category term="Python"></category><category term="Numerical"></category></entry></feed>

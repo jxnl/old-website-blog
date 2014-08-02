@@ -6,6 +6,9 @@ AUTHOR = 'Jason Liu'
 SITENAME = 'jxnl.co'
 SITEURL = 'jxnl.github.io'
 
+ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{slug}/index.html'
+
 PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'

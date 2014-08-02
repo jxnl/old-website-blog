@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jxnl.co</title><link>/</link><description></description><atom:link href="/feeds/jason-liu.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 02 Jul 2014 00:00:00 +0200</lastBuildDate><item><title>Better than linspace</title><link>/better-linspace.html</link><description>&lt;style type="text/css"&gt;.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jxnl.co</title><link>/</link><description></description><atom:link href="/feeds/jason-liu.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 23 Jul 2014 00:00:00 +0200</lastBuildDate><item><title>Better than linspace</title><link>/posts/2014/Jul/better-linspace/</link><description>&lt;style type="text/css"&gt;.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
 .clearfix:after{clear:both}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}
 .input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
@@ -4713,35 +4713,4 @@ iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiFv9L1brNCbMot1nAAAAAElFTkSuQmCC
 &lt;p&gt;With just 10 more points than our initial static interpolation we are been able to get incredible resolution at the maximum and minimums where the function has a very large acceleration. We also see that on the sides of the first bump and after the second, we dont use many points since we know that they behave linearly as a result of constant velocity!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[1]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Thanks!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;
-Thanks!
-
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Jason Liu</dc:creator><pubDate>Wed, 02 Jul 2014 00:00:00 +0200</pubDate><guid>tag:,2014-07-02:better-linspace.html</guid><category>Python</category><category>Numerical</category></item></channel></rss>
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Jason Liu</dc:creator><pubDate>Wed, 23 Jul 2014 00:00:00 +0200</pubDate><guid>tag:,2014-07-23:posts/2014/Jul/better-linspace/</guid><category>Python</category><category>Numerical</category></item></channel></rss>
