@@ -9,6 +9,10 @@ SITEURL = 'jxnl.github.io'
 ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{slug}/index.html'
 
+DISPLAY_PAGES_ON_MENU = True
+
+ABOUT_PAGE = SITEURL+"/pages/about.html"
+
 PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'
@@ -21,6 +25,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 GITHUB_USERNAME, TWITTER_USERNAME = "jxnl", "jxnlco"
+DRIBBBLE_USERNAME = 'jxnl'
 SHOW_ARCHIVES = True
 
 MARKUP = ('md', 'ipynb')
