@@ -6,6 +6,9 @@ AUTHOR = 'Jason Liu'
 SITENAME = 'jxnl.co'
 SITEURL = 'jxnl.github.io'
 
+STATIC_PATHS = ['images']
+# EXTRA_PATH_METADATA = {'extra/CNAME': {'path', 'CNAME'}}
+
 ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{slug}/index.html'
 
@@ -26,6 +29,7 @@ TRANSLATION_FEED_ATOM = None
 
 GITHUB_USERNAME, TWITTER_USERNAME = "jxnl", "jxnlco"
 DRIBBBLE_USERNAME = 'jxnl'
+DISQUS_USERNAME = 'jxnlgithub'
 SHOW_ARCHIVES = True
 
 MARKUP = ('md', 'ipynb')
