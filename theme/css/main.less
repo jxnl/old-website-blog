@@ -4,10 +4,11 @@
 body {
     margin: 0;
     padding: 0;
-    font: 15px 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    font: 15px 'Source Sans Pro', sans-serif;
     line-height: 1.6em;
     color: @text-color;
-    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -50,7 +51,7 @@ header.main-header {
 
                 a, a:hover {
                     font-size: 13px;
-                    font-weight: 700;
+                    font-weight: bold;
                     text-transform: uppercase;
                     color: #FFF;
                 }
@@ -229,7 +230,7 @@ article {
             border: 2px solid #007EE5;
             margin: 0 5px;
             padding: 8px 20px;
-            font-weight: 700;
+            font-weight: bold;
             color: #007EE5;
         }
 
@@ -245,19 +246,19 @@ article {
 
     h2:before {
         content: "# ";
-        font-weight: 700;
+        font-weight: bold;
         color: #DDD;
     }
 
     h3:before {
         content: "## ";
-        font-weight: 700;
+        font-weight: bold;
         color: #DDD;
     }
 
     h4:before {
         content: "### ";
-        font-weight: 700;
+        font-weight: bold;
         color: #DDD;
     }
 
@@ -286,7 +287,7 @@ article {
             h2 {
                 font-size: 1em;
                 display: inline;
-                font-weight: 400;
+                font-weight: normal;
             }
 
             span {
