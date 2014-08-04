@@ -1555,13 +1555,13 @@ table.dataframe th, td {
 <h4 id="case-1-">Case 1:</h4>
 <p>If $k=1, n=1$. We place the first element in the reservoir and find that we are done.</p>
 <h4 id="case-2-">Case 2:</h4>
-<p>If $k=1, n=2$. We place the first element in the reservoir. Secondly, we know in advance that the last elemebt must have an acceptance probability of $P=\frac{1}{2}$. When the stream ends after 2, it is clear that both elements had a $\frac{1}{2}$ probability of being in the reservoir.</p>
+<p>If $k=1, n=2$. We place the first element in the reservoir. Secondly, we know in advance that the last element must have an acceptance probability of $P=\frac{1}{2}$. When the stream ends after 2, it is clear that both elements had a $\frac{1}{2}$ probability of being in the reservoir.</p>
 <h4 id="case-3-">Case 3:</h4>
 <p>If $k=1, n=3$. We do what we did before but we know that the third element must have an acceptance probability of $P = \frac{1}{3}$. This also means that the element in the reservoir has a $\frac{2}{3}$ chance of staying in the reservoir. Note that at $t=2$ it had a $\frac{1}{2}$ chance of being replaced. The probabilities telescope inwards when we calculate the probability of the first and second elements being in the reservoir.</p>
 <p>$$ P = 1 \cdot \frac{1}{2} \cdot \frac{2}{3} = \frac{1}{3}$$</p>
-<p>We can see that due to the telescoping effect, each elemebt has a $1/3$ chance of being accepted.</p>
+<p>We can see that due to the telescoping effect, each element has a $1/3$ chance of being accepted.</p>
 <h4 id="case-n-">Case n:</h4>
-<p>It seems that the probabilites of each elemebt always 'telescopes' into $1/n$ as long as we accept new $i^{th}$ element with $P=1/i$.</p>
+<p>It seems that the probabilites of each element always 'telescopes' into $1/n$ as long as we accept new $i^{th}$ element with $P=1/i$.</p>
 <p>$$ P = \frac{1}{2} \cdot \frac{2}{3} \cdot \frac{3}{4} \cdots \frac{n-2}{n-1} \cdot \frac{n-1}{n} = \frac{1}{n} $$</p>
 </div>
 </div>
@@ -1631,7 +1631,7 @@ In [39]:
 <p>In this case we will see the following telescoping effect with the productivies.</p>
 <p>$$ P(keep) = \frac{1}{k} \cdot \frac{k}{k+1} \cdot \frac{k+1}{k+2}\cdot \frac{k+3}{k+4} \cdots \frac{k+n-k-1}{n} = \frac{1}{n}$$</p>
 <p>So cool!</p>
-<p>To implement this, we will do one small trick to make the replacement a bit more readable. Instead of calculating (i-k+1/i) at each iteration, we will use <code>randint</code> $[1, i]$ and use that random value as a way to select which elemebt we select.</p>
+<p>To implement this, we will do one small trick to make the replacement a bit more readable. Instead of calculating (i-k+1/i) at each iteration, we will use <code>randint</code> $[1, i]$ and use that random value as a way to select which element we select.</p>
 </div>
 </div>
 </div>
