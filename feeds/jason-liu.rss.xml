@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jxnl.co</title><link>/</link><description></description><atom:link href="/feeds/jason-liu.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 04 Aug 2014 00:00:00 +0200</lastBuildDate><item><title>Reservoir Sampling</title><link>/posts/2014/Aug/reservoir-sampling/</link><description>&lt;p&gt;Randomized algorithms are very useful in data science. It allows us to be time and space efficient
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jxnl.co</title><link>/</link><description></description><atom:link href="/feeds/jason-liu.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 04 Aug 2014 00:00:00 +0200</lastBuildDate><item><title>Reservoir Sampling</title><link>/posts/2014/Aug/reservoir-sampling/</link><description>&lt;p&gt;Randomized algorithms are very useful in data science. It lets us be time and space efficient
 while maintaining good performance. One very elegant algorithm is called Reservoir Sampling which 
 does the following:&lt;/p&gt;
 &lt;blockquote&gt;
