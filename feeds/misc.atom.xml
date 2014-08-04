@@ -1475,7 +1475,6 @@ table.dataframe th, td {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this post I will discuss a very interesting problem I was asked during one of my first techinical interviews.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Randomly choose $k$ samples from a list of $n$ items where $n$ is either unknown or very large. Assume that this data stream might not fit into main memory. Furthurmore, I should take $O(n)$ time and $O(k)$ space.&lt;/p&gt;
 &lt;/blockquote&gt;

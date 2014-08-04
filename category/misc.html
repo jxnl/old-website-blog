@@ -58,9 +58,10 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post I will discuss a very interesting problem I was asked during one of my first techinical interviews.</p>
 <blockquote>
 <p>Randomly choose $k$ samples from a list of $n$ items where $n$ is either unknown or very large. Assume that this data stream might not fit into main memory. Furthurmore, I should take $O(n)$ time and $O(k)$ space.</p>
+</blockquote>
+<p>$O(k)$ space is what makes the problem interesting. Naively we would just load it into memory, count the total number of elements in the data set, and pick $k$ numbers from $[1...n]$. </p>
     </div>
 
     <div class="meta">
