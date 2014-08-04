@@ -71,7 +71,7 @@ element with:&lt;/p&gt;
 &lt;p&gt;Once an new value from the stream is accepted, all we need to do is remove one
 element from the reservoir (with uniform probability) and fill in the new spot.&lt;/p&gt;
 &lt;p&gt;In this case we will see the following telescoping effect with the probabilities.&lt;/p&gt;
-&lt;p&gt;$$ P(keep) = \frac{k}{k} \cdot \frac{1}{k} \cdot \frac{k}{k+1} \cdot \frac{k+1}{k+2}\cdot
+&lt;p&gt;$$ P(keep) = \frac{k}{k} \cdot \frac{k}{k+1} \cdot \frac{k+1}{k+2}\cdot
 \frac{k+3}{k+4} \cdots \frac{k+n-k-1}{n} = \frac{k}{n}$$&lt;/p&gt;
 &lt;p&gt;Cool!&lt;/p&gt;
 &lt;p&gt;To implement this, we will use a simple trick to make the replacement a bit more
