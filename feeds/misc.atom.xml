@@ -1498,7 +1498,7 @@ table.dataframe th, td {
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The first thing we need to do is consider cases where $k,n$ are small.&lt;/p&gt;
-&lt;p&gt;Lets consider $k=1$ for now and abstract it to $k=k$ later.We should also consider the cases where $n$ is still reasonable. It should work for small $n$ before it works for big $n$.&lt;/p&gt;
+&lt;p&gt;Lets consider $k=1$ for now and abstract it to $k=k$ later. We should also consider the cases where $n$ is still reasonable. It should work for small $n$ before it works for big $n$.&lt;/p&gt;
 &lt;h4 id="case-1-"&gt;Case 1:&lt;/h4&gt;
 &lt;p&gt;If $k=1, n=1$. We place the first element in the reservoir and find that we are done.&lt;/p&gt;
 &lt;h4 id="case-2-"&gt;Case 2:&lt;/h4&gt;
@@ -1516,7 +1516,7 @@ table.dataframe th, td {
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In [38]:
+In [4]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
@@ -1543,24 +1543,24 @@ In [38]:
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In [39]:
+In [5]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Example sampling &lt;/span&gt;
 &lt;span class="n"&gt;stream&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'bar'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'baz'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'spam'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'eggs'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;sample_single_element&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stream&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sample_single_element&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stream&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
-    Out[39]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_pyout"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
-&amp;amp;apos;baz&amp;amp;apos;
+spam
+
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1585,7 +1585,7 @@ In [39]:
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In [40]:
+In [6]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
@@ -1615,24 +1615,24 @@ In [40]:
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In [41]:
+In [7]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="c"&gt;# Example sampling &lt;/span&gt;
 &lt;span class="n"&gt;stream&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'bar'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'baz'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'spam'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'eggs'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;sample_k_elements&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sample_k_elements&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
-    Out[41]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_pyout"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
-[&amp;amp;apos;spam&amp;amp;apos;, &amp;amp;apos;baz&amp;amp;apos;]
+[&amp;amp;apos;baz&amp;amp;apos;, &amp;amp;apos;bar&amp;amp;apos;]
+
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;

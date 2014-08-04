@@ -1551,7 +1551,7 @@ table.dataframe th, td {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The first thing we need to do is consider cases where $k,n$ are small.</p>
-<p>Lets consider $k=1$ for now and abstract it to $k=k$ later.We should also consider the cases where $n$ is still reasonable. It should work for small $n$ before it works for big $n$.</p>
+<p>Lets consider $k=1$ for now and abstract it to $k=k$ later. We should also consider the cases where $n$ is still reasonable. It should work for small $n$ before it works for big $n$.</p>
 <h4 id="case-1-">Case 1:</h4>
 <p>If $k=1, n=1$. We place the first element in the reservoir and find that we are done.</p>
 <h4 id="case-2-">Case 2:</h4>
@@ -1569,7 +1569,7 @@ table.dataframe th, td {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In [38]:
+In [4]:
 </div>
 <div class="inner_cell">
 <div class="input_area">
@@ -1596,24 +1596,24 @@ In [38]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In [39]:
+In [5]:
 </div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Example sampling </span>
 <span class="n">stream</span> <span class="o">=</span> <span class="p">[</span><span class="s">'foo'</span><span class="p">,</span> <span class="s">'bar'</span><span class="p">,</span> <span class="s">'baz'</span><span class="p">,</span> <span class="s">'spam'</span><span class="p">,</span> <span class="s">'eggs'</span><span class="p">]</span>
-<span class="n">sample_single_element</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sample_single_element</span><span class="p">(</span><span class="n">stream</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">
-    Out[39]:</div>
-<div class="output_text output_subarea output_pyout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>
-&amp;apos;baz&amp;apos;
+spam
+
 </pre>
 </div>
 </div>
@@ -1638,7 +1638,7 @@ In [39]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In [40]:
+In [6]:
 </div>
 <div class="inner_cell">
 <div class="input_area">
@@ -1668,24 +1668,24 @@ In [40]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In [41]:
+In [7]:
 </div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="c"># Example sampling </span>
 <span class="n">stream</span> <span class="o">=</span> <span class="p">[</span><span class="s">'foo'</span><span class="p">,</span> <span class="s">'bar'</span><span class="p">,</span> <span class="s">'baz'</span><span class="p">,</span> <span class="s">'spam'</span><span class="p">,</span> <span class="s">'eggs'</span><span class="p">]</span>
-<span class="n">sample_k_elements</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sample_k_elements</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">
-    Out[41]:</div>
-<div class="output_text output_subarea output_pyout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>
-[&amp;apos;spam&amp;apos;, &amp;apos;baz&amp;apos;]
+[&amp;apos;baz&amp;apos;, &amp;apos;bar&amp;apos;]
+
 </pre>
 </div>
 </div>
