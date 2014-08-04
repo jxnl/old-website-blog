@@ -52,42 +52,35 @@
         </header>
 
         <div class="article_content">
-            <p>Randomized algorithms are very useful in data science. It lets us be time and space efficient
-while maintaining good performance. One very elegant algorithm is called Reservoir Sampling which 
-does the following:</p>
+            <p>Randomized algorithms are very useful, particularly data science. The main benefit is that it allows us to be both time and space efficient.
+One such algorithm is called Reservoir Sampling, or otherwise known as Algorithm R by Jeffrey Vitter in his paper on the subject. His goal 
+was the address the following question.</p>
 <blockquote>
 <p>Given a data set of unknown size $N$, uniformly select $k$ elements
 from the set such that each element has a $1/N$ probability of being chosen.</p>
 </blockquote>
-<p>What is interesting is that Reservoir Sampling requires only $O(n)$ time
-and only $O(k)$ space.</p>
+<p>Reservoir Sampling requires only $O(n)$ time and only $O(k)$ space.</p>
 <div class="highlight"><pre><span class="n">Acceptance</span> <span class="n">Probability</span><span class="o">:</span> 
-    <span class="n">The</span> <span class="n">probability</span> <span class="n">that</span> <span class="n">we</span> <span class="n">will</span> <span class="k">switch</span> <span class="n">out</span> <span class="n">our</span> <span class="n">old</span> <span class="n">value</span> <span class="n">with</span> <span class="n">a</span> <span class="n">new</span> <span class="n">one</span>
+    <span class="n">The</span> <span class="n">probability</span> <span class="n">that</span> <span class="n">we</span> <span class="n">will</span> <span class="n">change</span> <span class="n">an</span> <span class="n">old</span> <span class="n">value</span> <span class="n">with</span> <span class="n">a</span> <span class="n">new</span> <span class="n">one</span>
 
 <span class="n">Some</span> <span class="n">Notation</span><span class="o">:</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">size</span> <span class="n">of</span> <span class="n">reservoir</span> <span class="p">(</span><span class="n">how</span> <span class="n">many</span> <span class="n">samples</span> <span class="n">we</span> <span class="n">want</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">reservoir</span> <span class="p">(</span><span class="n">how</span> <span class="n">many</span> <span class="n">samples</span> <span class="n">we</span> <span class="n">want</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">where</span> <span class="n">we</span> <span class="n">are</span> <span class="n">in</span> <span class="n">the</span> <span class="n">stream</span> <span class="p">(</span><span class="n">how</span> <span class="n">many</span> <span class="n">elements</span> <span class="n">we</span> <span class="n">have</span> <span class="n">seen</span><span class="p">)</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">some</span> <span class="n">mysterious</span> <span class="n">value</span> <span class="n">that</span> <span class="n">represents</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">our</span> <span class="n">data</span> <span class="n">set</span>
 </pre></div>
 
 
-<p>First let us consider the case where $k=1$.</p>
+<h3>Some examples</h3>
 <p>If $k=1, N=2$. We place the first element in the reservoir. Since we know that
 the second / last element must have an acceptance probability of $P=\frac{1}{2}$
 When the stream ends after 2, it is clear that both elements
 had a $\frac{1}{2}$ probability of being in the reservoir.</p>
-<h4>Case 3:</h4>
 <p>If $k=1, N=3$. We know that the third element must have an acceptance probability
 of $\frac{1}{3}$. This also means that the element in the reservoir has a 
 $\frac{2}{3}$ chance of staying in the reservoir. Note that at $n=2$ it had a 
 $\frac{1}{2}$ chance of being replaced. The probabilities telescope inwards 
 when we calculate the probability of the first and second elements being in the reservoir.</p>
 <p>$$ P = 1 \cdot \frac{1}{2} \cdot \frac{2}{3} = \frac{1}{3}$$</p>
-<p>We can see that due to the telescoping effect, each element has a $1/3$ chance
-of being accepted.</p>
-<h4>Case N:</h4>
-<p>It seems that the probabilities of each element always 'telescopes' into $1/n$ as
-long as we accept new $i^{th}$ element with $P=1/i$.</p>
 <p>If we define the acceptance probability $f(n, k) = 1/n$ we will obtain any item with
 a final probability of $1/N$</p>
 <p>$$ P = \frac{1}{2} \cdot \frac{2}{3} \cdot \frac{3}{4} \cdots \frac{n-2}{n-1}
@@ -116,20 +109,20 @@ a final probability of $1/N$</p>
 </pre></div>
 
 
+<h3>Generalizing for other values of k</h3>
 <p>It turns out that to generalize this for the case where $k=k$, all we need to do
 is put the first $k$ items into your reservoir first, this is to say that the first 
-$k$ elemebts have an acceptance probability of $p=1 = k/k$. Afterwards, we sample each
+$k$ elements have an acceptance probability of $p=1 = k/k$. Afterwards, we sample each
 element with:</p>
 <p>$$ P(accept) = \frac{k}{n} $$</p>
-<p>Once an new value from the stream is accepted, all we need to do is remove one
+<p>Once the new value from the stream is accepted, all we need to do is remove one
 element from the reservoir (with uniform probability) and fill in the new spot.</p>
-<p>In this case we will see the following telescoping effect with the probabilities.</p>
-<p>$$ P(keep) = \frac{k}{k} \cdot \frac{k}{k+1} \cdot \frac{k+1}{k+2}\cdot
+<p>In this case, we will see the following telescoping effect with the probabilities.</p>
+<p>$$ P(kept) = \frac{k}{k} \cdot \frac{k}{k+1} \cdot \frac{k+1}{k+2}\cdot
 \frac{k+3}{k+4} \cdots \frac{k+n-k-1}{n} = \frac{k}{n}$$</p>
-<p>Cool!</p>
 <p>To implement this, we will use a simple trick to make the replacement a bit more
 readable. Instead of calculating (k/n) at each iteration, we will use <code>randint</code> 
-$[1, i]$ and use that random value as a way to select which element we select.</p>
+$[1, n]$ and use that random value as a way to select which element we select.</p>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">sample_k_elements</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sample k random elements from a stream of inputs with sample</span>
 <span class="sd">    probability P=1/n where `n` is the size of the stream</span>
@@ -159,7 +152,7 @@ $[1, i]$ and use that random value as a way to select which element we select.</
 
 
 <h2>Conclusions</h2>
-<p>It turns out that if you think about the problem hard enough, if we wanted to sample
+<p>It turns out that if you think about the problem hard enough if we wanted to sample
 with a distribution that is not uniform. All we need to so is change our definition of 
 our acceptance probability, which is a function of $k$ and $n$.</p>
 <p>$$ f(n, k) $$</p>
@@ -167,16 +160,16 @@ our acceptance probability, which is a function of $k$ and $n$.</p>
 While it is safe to say that events that happened last month matter, but are they as important
 as events that happen recently? If we define </p>
 <p>$$ f(n, k) = k(1+exp(-1/B)$$</p>
-<p>Instead of a uniform sample we get one that is exponential where its more likely to get recent
+<p>Instead of an uniform sample we get one that is exponential where it's more likely to get recent
 samples than old ones.</p>
-<p>By modifying $f(n ,k)$ to we can consider cases where each element has different weights among
+<p>By modifying $f(n, k)$ to we can consider cases where each element has different weights among
 like a change in $k$.</p>
 <p>From my readings, a quick Google search 'Reservoir Sampling over Data Streams' returns
-plenty of papers that discusses this family of algorithms.</p>
-<p>As a learning project, I recently published a little python package called <code>Reservoir</code>
+plenty of papers that discuss this family of algorithms.</p>
+<p>As a learning project, I recently published a little python package called <code>Reservoir.</code>
 that you can download on <code>pypi</code>. I'm hoping to try to include both weighted and exponential
 sampling classes in the future.</p>
-<p>You can install it with <code>pip install Reservoir</code> and check out the documentation
+<p>You can install it with <code>pip install Reservoir</code> and checkout the documentation
 on <a href="https://github.com/jxnl/python-reservoir">Github.</a>.</p>
         </div>
 

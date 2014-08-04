@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>jxnl.co</title><link href="/" rel="alternate"></link><link href="/feeds/jason-liu.atom.xml" rel="self"></link><id>/</id><updated>2014-08-04T00:00:00+02:00</updated><entry><title>Reservoir Sampling</title><link href="/posts/2014/Aug/reservoir-sampling/" rel="alternate"></link><updated>2014-08-04T00:00:00+02:00</updated><author><name>Jason Liu</name></author><id>tag:,2014-08-04:posts/2014/Aug/reservoir-sampling/</id><summary type="html">&lt;p&gt;Randomized algorithms are very useful in data science. It lets us be time and space efficient
-while maintaining good performance. One very elegant algorithm is called Reservoir Sampling which 
-does the following:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>jxnl.co</title><link href="/" rel="alternate"></link><link href="/feeds/jason-liu.atom.xml" rel="self"></link><id>/</id><updated>2014-08-04T00:00:00+02:00</updated><entry><title>Reservoir Sampling</title><link href="/posts/2014/Aug/reservoir-sampling/" rel="alternate"></link><updated>2014-08-04T00:00:00+02:00</updated><author><name>Jason Liu</name></author><id>tag:,2014-08-04:posts/2014/Aug/reservoir-sampling/</id><summary type="html">&lt;p&gt;Randomized algorithms are very useful, particularly data science. The main benefit is that it allows us to be both time and space efficient.
+One such algorithm is called Reservoir Sampling, or otherwise known as Algorithm R by Jeffrey Vitter in his paper on the subject. His goal 
+was the address the following question.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given a data set of unknown size $N$, uniformly select $k$ elements
 from the set such that each element has a $1/N$ probability of being chosen.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;What is interesting is that Reservoir Sampling requires only $O(n)$ time
-and only $O(k)$ space.&lt;/p&gt;
+&lt;p&gt;Reservoir Sampling requires only $O(n)$ time and only $O(k)$ space.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Acceptance&lt;/span&gt; &lt;span class="n"&gt;Probability&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
-    &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;probability&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="k"&gt;switch&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="n"&gt;our&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;one&lt;/span&gt;
+    &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;probability&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;change&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;one&lt;/span&gt;
 
 &lt;span class="n"&gt;Some&lt;/span&gt; &lt;span class="n"&gt;Notation&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;reservoir&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;how&lt;/span&gt; &lt;span class="n"&gt;many&lt;/span&gt; &lt;span class="n"&gt;samples&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;reservoir&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;how&lt;/span&gt; &lt;span class="n"&gt;many&lt;/span&gt; &lt;span class="n"&gt;samples&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;stream&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;how&lt;/span&gt; &lt;span class="n"&gt;many&lt;/span&gt; &lt;span class="n"&gt;elements&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;have&lt;/span&gt; &lt;span class="n"&gt;seen&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;N&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some&lt;/span&gt; &lt;span class="n"&gt;mysterious&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;represents&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;our&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;First let us consider the case where $k=1$.&lt;/p&gt;
+&lt;h3&gt;Some examples&lt;/h3&gt;
 &lt;p&gt;If $k=1, N=2$. We place the first element in the reservoir. Since we know that
 the second / last element must have an acceptance probability of $P=\frac{1}{2}$
 When the stream ends after 2, it is clear that both elements
 had a $\frac{1}{2}$ probability of being in the reservoir.&lt;/p&gt;
-&lt;h4&gt;Case 3:&lt;/h4&gt;
 &lt;p&gt;If $k=1, N=3$. We know that the third element must have an acceptance probability
 of $\frac{1}{3}$. This also means that the element in the reservoir has a 
 $\frac{2}{3}$ chance of staying in the reservoir. Note that at $n=2$ it had a 
 $\frac{1}{2}$ chance of being replaced. The probabilities telescope inwards 
 when we calculate the probability of the first and second elements being in the reservoir.&lt;/p&gt;
 &lt;p&gt;$$ P = 1 \cdot \frac{1}{2} \cdot \frac{2}{3} = \frac{1}{3}$$&lt;/p&gt;
-&lt;p&gt;We can see that due to the telescoping effect, each element has a $1/3$ chance
-of being accepted.&lt;/p&gt;
-&lt;h4&gt;Case N:&lt;/h4&gt;
-&lt;p&gt;It seems that the probabilities of each element always 'telescopes' into $1/n$ as
-long as we accept new $i^{th}$ element with $P=1/i$.&lt;/p&gt;
 &lt;p&gt;If we define the acceptance probability $f(n, k) = 1/n$ we will obtain any item with
 a final probability of $1/N$&lt;/p&gt;
 &lt;p&gt;$$ P = \frac{1}{2} \cdot \frac{2}{3} \cdot \frac{3}{4} \cdots \frac{n-2}{n-1}
@@ -63,20 +56,20 @@ a final probability of $1/N$&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Generalizing for other values of k&lt;/h3&gt;
 &lt;p&gt;It turns out that to generalize this for the case where $k=k$, all we need to do
 is put the first $k$ items into your reservoir first, this is to say that the first 
-$k$ elemebts have an acceptance probability of $p=1 = k/k$. Afterwards, we sample each
+$k$ elements have an acceptance probability of $p=1 = k/k$. Afterwards, we sample each
 element with:&lt;/p&gt;
 &lt;p&gt;$$ P(accept) = \frac{k}{n} $$&lt;/p&gt;
-&lt;p&gt;Once an new value from the stream is accepted, all we need to do is remove one
+&lt;p&gt;Once the new value from the stream is accepted, all we need to do is remove one
 element from the reservoir (with uniform probability) and fill in the new spot.&lt;/p&gt;
-&lt;p&gt;In this case we will see the following telescoping effect with the probabilities.&lt;/p&gt;
-&lt;p&gt;$$ P(keep) = \frac{k}{k} \cdot \frac{k}{k+1} \cdot \frac{k+1}{k+2}\cdot
+&lt;p&gt;In this case, we will see the following telescoping effect with the probabilities.&lt;/p&gt;
+&lt;p&gt;$$ P(kept) = \frac{k}{k} \cdot \frac{k}{k+1} \cdot \frac{k+1}{k+2}\cdot
 \frac{k+3}{k+4} \cdots \frac{k+n-k-1}{n} = \frac{k}{n}$$&lt;/p&gt;
-&lt;p&gt;Cool!&lt;/p&gt;
 &lt;p&gt;To implement this, we will use a simple trick to make the replacement a bit more
 readable. Instead of calculating (k/n) at each iteration, we will use &lt;code&gt;randint&lt;/code&gt; 
-$[1, i]$ and use that random value as a way to select which element we select.&lt;/p&gt;
+$[1, n]$ and use that random value as a way to select which element we select.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sample_k_elements&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Sample k random elements from a stream of inputs with sample&lt;/span&gt;
 &lt;span class="sd"&gt;    probability P=1/n where `n` is the size of the stream&lt;/span&gt;
@@ -106,7 +99,7 @@ $[1, i]$ and use that random value as a way to select which element we select.&l
 
 
 &lt;h2&gt;Conclusions&lt;/h2&gt;
-&lt;p&gt;It turns out that if you think about the problem hard enough, if we wanted to sample
+&lt;p&gt;It turns out that if you think about the problem hard enough if we wanted to sample
 with a distribution that is not uniform. All we need to so is change our definition of 
 our acceptance probability, which is a function of $k$ and $n$.&lt;/p&gt;
 &lt;p&gt;$$ f(n, k) $$&lt;/p&gt;
@@ -114,16 +107,16 @@ our acceptance probability, which is a function of $k$ and $n$.&lt;/p&gt;
 While it is safe to say that events that happened last month matter, but are they as important
 as events that happen recently? If we define &lt;/p&gt;
 &lt;p&gt;$$ f(n, k) = k(1+exp(-1/B)$$&lt;/p&gt;
-&lt;p&gt;Instead of a uniform sample we get one that is exponential where its more likely to get recent
+&lt;p&gt;Instead of an uniform sample we get one that is exponential where it's more likely to get recent
 samples than old ones.&lt;/p&gt;
-&lt;p&gt;By modifying $f(n ,k)$ to we can consider cases where each element has different weights among
+&lt;p&gt;By modifying $f(n, k)$ to we can consider cases where each element has different weights among
 like a change in $k$.&lt;/p&gt;
 &lt;p&gt;From my readings, a quick Google search 'Reservoir Sampling over Data Streams' returns
-plenty of papers that discusses this family of algorithms.&lt;/p&gt;
-&lt;p&gt;As a learning project, I recently published a little python package called &lt;code&gt;Reservoir&lt;/code&gt;
+plenty of papers that discuss this family of algorithms.&lt;/p&gt;
+&lt;p&gt;As a learning project, I recently published a little python package called &lt;code&gt;Reservoir.&lt;/code&gt;
 that you can download on &lt;code&gt;pypi&lt;/code&gt;. I'm hoping to try to include both weighted and exponential
 sampling classes in the future.&lt;/p&gt;
-&lt;p&gt;You can install it with &lt;code&gt;pip install Reservoir&lt;/code&gt; and check out the documentation
+&lt;p&gt;You can install it with &lt;code&gt;pip install Reservoir&lt;/code&gt; and checkout the documentation
 on &lt;a href="https://github.com/jxnl/python-reservoir"&gt;Github.&lt;/a&gt;.&lt;/p&gt;</summary><category term="python"></category><category term="probability"></category><category term="data"></category></entry><entry><title>Best ways to pick your plotting breakpoints</title><link href="/posts/2014/Jul/plotting-breakpoints/" rel="alternate"></link><updated>2014-07-23T00:00:00+02:00</updated><author><name>Jason Liu</name></author><id>tag:,2014-07-23:posts/2014/Jul/plotting-breakpoints/</id><summary type="html">&lt;style type="text/css"&gt;.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
 .clearfix:after{clear:both}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}
