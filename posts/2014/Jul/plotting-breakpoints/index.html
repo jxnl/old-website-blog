@@ -1,5 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>jxnl.co</title><link href="/" rel="alternate"></link><link href="/feeds/computing.atom.xml" rel="self"></link><id>/</id><updated>2014-07-23T00:00:00+02:00</updated><entry><title>Better than linspace</title><link href="/posts/2014/Jul/better-linspace/" rel="alternate"></link><updated>2014-07-23T00:00:00+02:00</updated><author><name>Jason Liu</name></author><id>tag:,2014-07-23:posts/2014/Jul/better-linspace/</id><summary type="html">&lt;style type="text/css"&gt;.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Jason Liu">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Best ways to pick your plotting breakpoints | jxnl.co</title>
+
+        <link rel="alternate" type="application/atom+xml" title="jxnl.co blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="/theme/css/pygments.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              processEscapes: true
+            }
+          });
+        </script>
+    </head>
+
+    <body>
+        <header class="main-header">
+            <div class="container">
+                <a href="/" title="Home" class="title">Jason Liu</a></li>
+                <nav>
+                    <ul>
+
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="http://github.com/jxnl" title="jxnl's Github" rel="me">Github</a></li>
+                            <li><a href="http://twitter.com/jxnlco" title="jxnlco Twitter" rel="me">Twitter</a></li>
+                            <li><a href="http://dribbble.com/jxnl" title="jxnlco Dribbble" rel="me">Dribbble</a></li>
+                            <li><a href="/archives.html" title="Archive">Archives</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+<div class="container post">
+
+    <article>
+        <header>
+            <h1>Best ways to pick your plotting breakpoints</h1>
+            <time datetime="article.date.isoformat()" pubdate>Wed 23 July 2014</time>
+        </header>
+
+        <div class="article_content">
+            <style type="text/css">.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
 .clearfix:after{clear:both}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}
 .input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
@@ -149,7 +202,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#999}
 input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#999}
 .radio,.checkbox{min-height:20px;padding-left:20px}
 .radio input[type="radio"],.checkbox input[type="checkbox"]{float:left;margin-left:-20px}
-.controls&gt;.radio:first-child,.controls&gt;.checkbox:first-child{padding-top:5px}
+.controls>.radio:first-child,.controls>.checkbox:first-child{padding-top:5px}
 .radio.inline,.checkbox.inline{display:inline-block;padding-top:5px;margin-bottom:0;vertical-align:middle}
 .radio.inline+.radio.inline,.checkbox.inline+.checkbox.inline{margin-left:10px}
 .input-mini{width:60px}
@@ -205,13 +258,13 @@ input:focus:invalid,textarea:focus:invalid,select:focus:invalid{color:#b94a48;bo
 .input-append,.input-prepend{display:inline-block;margin-bottom:10px;vertical-align:middle;font-size:0;white-space:nowrap}.input-append input,.input-prepend input,.input-append select,.input-prepend select,.input-append .uneditable-input,.input-prepend .uneditable-input,.input-append .dropdown-menu,.input-prepend .dropdown-menu,.input-append .popover,.input-prepend .popover{font-size:13px}
 .input-append input,.input-prepend input,.input-append select,.input-prepend select,.input-append .uneditable-input,.input-prepend .uneditable-input{position:relative;margin-bottom:0;*margin-left:0;vertical-align:top;border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}.input-append input:focus,.input-prepend input:focus,.input-append select:focus,.input-prepend select:focus,.input-append .uneditable-input:focus,.input-prepend .uneditable-input:focus{z-index:2}
 .input-append .add-on,.input-prepend .add-on{display:inline-block;width:auto;height:20px;min-width:16px;padding:4px 5px;font-size:13px;font-weight:normal;line-height:20px;text-align:center;text-shadow:0 1px 0 #fff;background-color:#eee;border:1px solid #ccc}
-.input-append .add-on,.input-prepend .add-on,.input-append .btn,.input-prepend .btn,.input-append .btn-group&gt;.dropdown-toggle,.input-prepend .btn-group&gt;.dropdown-toggle{vertical-align:top;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+.input-append .add-on,.input-prepend .add-on,.input-append .btn,.input-prepend .btn,.input-append .btn-group>.dropdown-toggle,.input-prepend .btn-group>.dropdown-toggle{vertical-align:top;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
 .input-append .active,.input-prepend .active{background-color:#a9dba9;border-color:#46a546}
 .input-prepend .add-on,.input-prepend .btn{margin-right:-1px}
 .input-prepend .add-on:first-child,.input-prepend .btn:first-child{border-radius:4px 0 0 4px;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px}
 .input-append input,.input-append select,.input-append .uneditable-input{border-radius:4px 0 0 4px;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px}.input-append input+.btn-group .btn:last-child,.input-append select+.btn-group .btn:last-child,.input-append .uneditable-input+.btn-group .btn:last-child{border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}
 .input-append .add-on,.input-append .btn,.input-append .btn-group{margin-left:-1px}
-.input-append .add-on:last-child,.input-append .btn:last-child,.input-append .btn-group:last-child&gt;.dropdown-toggle{border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}
+.input-append .add-on:last-child,.input-append .btn:last-child,.input-append .btn-group:last-child>.dropdown-toggle{border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}
 .input-prepend.input-append input,.input-prepend.input-append select,.input-prepend.input-append .uneditable-input{border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.input-prepend.input-append input+.btn-group .btn,.input-prepend.input-append select+.btn-group .btn,.input-prepend.input-append .uneditable-input+.btn-group .btn{border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}
 .input-prepend.input-append .add-on:first-child,.input-prepend.input-append .btn:first-child{margin-right:-1px;border-radius:4px 0 0 4px;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px}
 .input-prepend.input-append .add-on:last-child,.input-prepend.input-append .btn:last-child{margin-left:-1px;border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}
@@ -247,16 +300,16 @@ table{max-width:100%;background-color:transparent;border-collapse:collapse;borde
 .table-condensed th,.table-condensed td{padding:4px 5px}
 .table-bordered{border:1px solid #ddd;border-collapse:separate;*border-collapse:collapse;border-left:0;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.table-bordered th,.table-bordered td{border-left:1px solid #ddd}
 .table-bordered caption+thead tr:first-child th,.table-bordered caption+tbody tr:first-child th,.table-bordered caption+tbody tr:first-child td,.table-bordered colgroup+thead tr:first-child th,.table-bordered colgroup+tbody tr:first-child th,.table-bordered colgroup+tbody tr:first-child td,.table-bordered thead:first-child tr:first-child th,.table-bordered tbody:first-child tr:first-child th,.table-bordered tbody:first-child tr:first-child td{border-top:0}
-.table-bordered thead:first-child tr:first-child&gt;th:first-child,.table-bordered tbody:first-child tr:first-child&gt;td:first-child,.table-bordered tbody:first-child tr:first-child&gt;th:first-child{-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px}
-.table-bordered thead:first-child tr:first-child&gt;th:last-child,.table-bordered tbody:first-child tr:first-child&gt;td:last-child,.table-bordered tbody:first-child tr:first-child&gt;th:last-child{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px}
-.table-bordered thead:last-child tr:last-child&gt;th:first-child,.table-bordered tbody:last-child tr:last-child&gt;td:first-child,.table-bordered tbody:last-child tr:last-child&gt;th:first-child,.table-bordered tfoot:last-child tr:last-child&gt;td:first-child,.table-bordered tfoot:last-child tr:last-child&gt;th:first-child{-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
-.table-bordered thead:last-child tr:last-child&gt;th:last-child,.table-bordered tbody:last-child tr:last-child&gt;td:last-child,.table-bordered tbody:last-child tr:last-child&gt;th:last-child,.table-bordered tfoot:last-child tr:last-child&gt;td:last-child,.table-bordered tfoot:last-child tr:last-child&gt;th:last-child{-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px}
+.table-bordered thead:first-child tr:first-child>th:first-child,.table-bordered tbody:first-child tr:first-child>td:first-child,.table-bordered tbody:first-child tr:first-child>th:first-child{-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px}
+.table-bordered thead:first-child tr:first-child>th:last-child,.table-bordered tbody:first-child tr:first-child>td:last-child,.table-bordered tbody:first-child tr:first-child>th:last-child{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px}
+.table-bordered thead:last-child tr:last-child>th:first-child,.table-bordered tbody:last-child tr:last-child>td:first-child,.table-bordered tbody:last-child tr:last-child>th:first-child,.table-bordered tfoot:last-child tr:last-child>td:first-child,.table-bordered tfoot:last-child tr:last-child>th:first-child{-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
+.table-bordered thead:last-child tr:last-child>th:last-child,.table-bordered tbody:last-child tr:last-child>td:last-child,.table-bordered tbody:last-child tr:last-child>th:last-child,.table-bordered tfoot:last-child tr:last-child>td:last-child,.table-bordered tfoot:last-child tr:last-child>th:last-child{-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px}
 .table-bordered tfoot+tbody:last-child tr:last-child td:first-child{-webkit-border-bottom-left-radius:0;-moz-border-radius-bottomleft:0;border-bottom-left-radius:0}
 .table-bordered tfoot+tbody:last-child tr:last-child td:last-child{-webkit-border-bottom-right-radius:0;-moz-border-radius-bottomright:0;border-bottom-right-radius:0}
 .table-bordered caption+thead tr:first-child th:first-child,.table-bordered caption+tbody tr:first-child td:first-child,.table-bordered colgroup+thead tr:first-child th:first-child,.table-bordered colgroup+tbody tr:first-child td:first-child{-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px}
 .table-bordered caption+thead tr:first-child th:last-child,.table-bordered caption+tbody tr:first-child td:last-child,.table-bordered colgroup+thead tr:first-child th:last-child,.table-bordered colgroup+tbody tr:first-child td:last-child{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px}
-.table-striped tbody&gt;tr:nth-child(odd)&gt;td,.table-striped tbody&gt;tr:nth-child(odd)&gt;th{background-color:#f9f9f9}
-.table-hover tbody tr:hover&gt;td,.table-hover tbody tr:hover&gt;th{background-color:#f5f5f5}
+.table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th{background-color:#f9f9f9}
+.table-hover tbody tr:hover>td,.table-hover tbody tr:hover>th{background-color:#f5f5f5}
 table td[class*="span"],table th[class*="span"],.row-fluid table td[class*="span"],.row-fluid table th[class*="span"]{display:table-cell;float:none;margin-left:0}
 .table td.span1,.table th.span1{float:none;width:44px;margin-left:0}
 .table td.span2,.table th.span2{float:none;width:124px;margin-left:0}
@@ -270,16 +323,16 @@ table td[class*="span"],table th[class*="span"],.row-fluid table td[class*="span
 .table td.span10,.table th.span10{float:none;width:764px;margin-left:0}
 .table td.span11,.table th.span11{float:none;width:844px;margin-left:0}
 .table td.span12,.table th.span12{float:none;width:924px;margin-left:0}
-.table tbody tr.success&gt;td{background-color:#dff0d8}
-.table tbody tr.error&gt;td{background-color:#f2dede}
-.table tbody tr.warning&gt;td{background-color:#fcf8e3}
-.table tbody tr.info&gt;td{background-color:#d9edf7}
-.table-hover tbody tr.success:hover&gt;td{background-color:#d0e9c6}
-.table-hover tbody tr.error:hover&gt;td{background-color:#ebcccc}
-.table-hover tbody tr.warning:hover&gt;td{background-color:#faf2cc}
-.table-hover tbody tr.info:hover&gt;td{background-color:#c4e3f3}
+.table tbody tr.success>td{background-color:#dff0d8}
+.table tbody tr.error>td{background-color:#f2dede}
+.table tbody tr.warning>td{background-color:#fcf8e3}
+.table tbody tr.info>td{background-color:#d9edf7}
+.table-hover tbody tr.success:hover>td{background-color:#d0e9c6}
+.table-hover tbody tr.error:hover>td{background-color:#ebcccc}
+.table-hover tbody tr.warning:hover>td{background-color:#faf2cc}
+.table-hover tbody tr.info:hover>td{background-color:#c4e3f3}
 [class^="icon-"],[class*=" icon-"]{display:inline-block;width:14px;height:14px;*margin-right:.3em;line-height:14px;vertical-align:text-top;background-image:url("../img/glyphicons-halflings.png");background-position:14px 14px;background-repeat:no-repeat;margin-top:1px}
-.icon-white,.nav-pills&gt;.active&gt;a&gt;[class^="icon-"],.nav-pills&gt;.active&gt;a&gt;[class*=" icon-"],.nav-list&gt;.active&gt;a&gt;[class^="icon-"],.nav-list&gt;.active&gt;a&gt;[class*=" icon-"],.navbar-inverse .nav&gt;.active&gt;a&gt;[class^="icon-"],.navbar-inverse .nav&gt;.active&gt;a&gt;[class*=" icon-"],.dropdown-menu&gt;li&gt;a:hover&gt;[class^="icon-"],.dropdown-menu&gt;li&gt;a:focus&gt;[class^="icon-"],.dropdown-menu&gt;li&gt;a:hover&gt;[class*=" icon-"],.dropdown-menu&gt;li&gt;a:focus&gt;[class*=" icon-"],.dropdown-menu&gt;.active&gt;a&gt;[class^="icon-"],.dropdown-menu&gt;.active&gt;a&gt;[class*=" icon-"],.dropdown-submenu:hover&gt;a&gt;[class^="icon-"],.dropdown-submenu:focus&gt;a&gt;[class^="icon-"],.dropdown-submenu:hover&gt;a&gt;[class*=" icon-"],.dropdown-submenu:focus&gt;a&gt;[class*=" icon-"]{background-image:url("../img/glyphicons-halflings-white.png")}
+.icon-white,.nav-pills>.active>a>[class^="icon-"],.nav-pills>.active>a>[class*=" icon-"],.nav-list>.active>a>[class^="icon-"],.nav-list>.active>a>[class*=" icon-"],.navbar-inverse .nav>.active>a>[class^="icon-"],.navbar-inverse .nav>.active>a>[class*=" icon-"],.dropdown-menu>li>a:hover>[class^="icon-"],.dropdown-menu>li>a:focus>[class^="icon-"],.dropdown-menu>li>a:hover>[class*=" icon-"],.dropdown-menu>li>a:focus>[class*=" icon-"],.dropdown-menu>.active>a>[class^="icon-"],.dropdown-menu>.active>a>[class*=" icon-"],.dropdown-submenu:hover>a>[class^="icon-"],.dropdown-submenu:focus>a>[class^="icon-"],.dropdown-submenu:hover>a>[class*=" icon-"],.dropdown-submenu:focus>a>[class*=" icon-"]{background-image:url("../img/glyphicons-halflings-white.png")}
 .icon-glass{background-position:0 0}
 .icon-music{background-position:-24px 0}
 .icon-search{background-position:-48px 0}
@@ -427,23 +480,23 @@ table td[class*="span"],table th[class*="span"],.row-fluid table td[class*="span
 .dropdown .caret{margin-top:8px;margin-left:2px}
 .dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;list-style:none;background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,0.2);*border-right-width:2px;*border-bottom-width:2px;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.2);box-shadow:0 5px 10px rgba(0,0,0,0.2);-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box}.dropdown-menu.pull-right{right:0;left:auto}
 .dropdown-menu .divider{*width:100%;height:1px;margin:9px 1px;*margin:-5px 0 5px;overflow:hidden;background-color:#e5e5e5;border-bottom:1px solid #fff}
-.dropdown-menu&gt;li&gt;a{display:block;padding:3px 20px;clear:both;font-weight:normal;line-height:20px;color:#333;white-space:nowrap}
-.dropdown-menu&gt;li&gt;a:hover,.dropdown-menu&gt;li&gt;a:focus,.dropdown-submenu:hover&gt;a,.dropdown-submenu:focus&gt;a{text-decoration:none;color:#fff;background-color:#0081c2;background-image:-moz-linear-gradient(top, #08c, #0077b3);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0077b3));background-image:-webkit-linear-gradient(top, #08c, #0077b3);background-image:-o-linear-gradient(top, #08c, #0077b3);background-image:linear-gradient(to bottom, #08c, #0077b3);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
-.dropdown-menu&gt;.active&gt;a,.dropdown-menu&gt;.active&gt;a:hover,.dropdown-menu&gt;.active&gt;a:focus{color:#fff;text-decoration:none;outline:0;background-color:#0081c2;background-image:-moz-linear-gradient(top, #08c, #0077b3);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0077b3));background-image:-webkit-linear-gradient(top, #08c, #0077b3);background-image:-o-linear-gradient(top, #08c, #0077b3);background-image:linear-gradient(to bottom, #08c, #0077b3);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
-.dropdown-menu&gt;.disabled&gt;a,.dropdown-menu&gt;.disabled&gt;a:hover,.dropdown-menu&gt;.disabled&gt;a:focus{color:#999}
-.dropdown-menu&gt;.disabled&gt;a:hover,.dropdown-menu&gt;.disabled&gt;a:focus{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);cursor:default}
-.open{*z-index:1000}.open&gt;.dropdown-menu{display:block}
+.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:normal;line-height:20px;color:#333;white-space:nowrap}
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#fff;background-color:#0081c2;background-image:-moz-linear-gradient(top, #08c, #0077b3);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0077b3));background-image:-webkit-linear-gradient(top, #08c, #0077b3);background-image:-o-linear-gradient(top, #08c, #0077b3);background-image:linear-gradient(to bottom, #08c, #0077b3);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#0081c2;background-image:-moz-linear-gradient(top, #08c, #0077b3);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0077b3));background-image:-webkit-linear-gradient(top, #08c, #0077b3);background-image:-o-linear-gradient(top, #08c, #0077b3);background-image:linear-gradient(to bottom, #08c, #0077b3);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
+.dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{color:#999}
+.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);cursor:default}
+.open{*z-index:1000}.open>.dropdown-menu{display:block}
 .dropdown-backdrop{position:fixed;left:0;right:0;bottom:0;top:0;z-index:990}
-.pull-right&gt;.dropdown-menu{right:0;left:auto}
+.pull-right>.dropdown-menu{right:0;left:auto}
 .dropup .caret,.navbar-fixed-bottom .dropdown .caret{border-top:0;border-bottom:4px solid #000;content:""}
 .dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu{top:auto;bottom:100%;margin-bottom:1px}
 .dropdown-submenu{position:relative}
-.dropdown-submenu&gt;.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;border-radius:0 6px 6px 6px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px}
-.dropdown-submenu:hover&gt;.dropdown-menu{display:block}
-.dropup .dropdown-submenu&gt;.dropdown-menu{top:auto;bottom:0;margin-top:0;margin-bottom:-2px;border-radius:5px 5px 5px 0;-webkit-border-radius:5px 5px 5px 0;-moz-border-radius:5px 5px 5px 0;border-radius:5px 5px 5px 0}
-.dropdown-submenu&gt;a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#ccc;margin-top:5px;margin-right:-10px}
-.dropdown-submenu:hover&gt;a:after{border-left-color:#fff}
-.dropdown-submenu.pull-left{float:none}.dropdown-submenu.pull-left&gt;.dropdown-menu{left:-100%;margin-left:10px;border-radius:6px 0 6px 6px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;border-radius:0 6px 6px 6px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px}
+.dropdown-submenu:hover>.dropdown-menu{display:block}
+.dropup .dropdown-submenu>.dropdown-menu{top:auto;bottom:0;margin-top:0;margin-bottom:-2px;border-radius:5px 5px 5px 0;-webkit-border-radius:5px 5px 5px 0;-moz-border-radius:5px 5px 5px 0;border-radius:5px 5px 5px 0}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#ccc;margin-top:5px;margin-right:-10px}
+.dropdown-submenu:hover>a:after{border-left-color:#fff}
+.dropdown-submenu.pull-left{float:none}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;border-radius:6px 0 6px 6px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px}
 .dropdown .dropdown-menu .nav-header{padding-left:20px;padding-right:20px}
 .typeahead{z-index:1051;margin-top:2px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
 .well{min-height:20px;padding:19px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #e3e3e3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);box-shadow:inset 0 1px 1px rgba(0,0,0,0.05)}.well blockquote{border-color:#ddd;border-color:rgba(0,0,0,0.15)}
@@ -492,23 +545,23 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .btn-link[disabled]:hover,.btn-link[disabled]:focus{color:#333;text-decoration:none}
 .btn-group{position:relative;display:inline-block;*display:inline;*zoom:1;font-size:0;vertical-align:middle;white-space:nowrap;*margin-left:.3em}.btn-group:first-child{*margin-left:0}
 .btn-group+.btn-group{margin-left:5px}
-.btn-toolbar{font-size:0;margin-top:10px;margin-bottom:10px}.btn-toolbar&gt;.btn+.btn,.btn-toolbar&gt;.btn-group+.btn,.btn-toolbar&gt;.btn+.btn-group{margin-left:5px}
-.btn-group&gt;.btn{position:relative;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
-.btn-group&gt;.btn+.btn{margin-left:-1px}
-.btn-group&gt;.btn,.btn-group&gt;.dropdown-menu,.btn-group&gt;.popover{font-size:13px}
-.btn-group&gt;.btn-mini{font-size:9.75px}
-.btn-group&gt;.btn-small{font-size:11.049999999999999px}
-.btn-group&gt;.btn-large{font-size:16.25px}
-.btn-group&gt;.btn:first-child{margin-left:0;-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
-.btn-group&gt;.btn:last-child,.btn-group&gt;.dropdown-toggle{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px;-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px}
-.btn-group&gt;.btn.large:first-child{margin-left:0;-webkit-border-top-left-radius:6px;-moz-border-radius-topleft:6px;border-top-left-radius:6px;-webkit-border-bottom-left-radius:6px;-moz-border-radius-bottomleft:6px;border-bottom-left-radius:6px}
-.btn-group&gt;.btn.large:last-child,.btn-group&gt;.large.dropdown-toggle{-webkit-border-top-right-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;-webkit-border-bottom-right-radius:6px;-moz-border-radius-bottomright:6px;border-bottom-right-radius:6px}
-.btn-group&gt;.btn:hover,.btn-group&gt;.btn:focus,.btn-group&gt;.btn:active,.btn-group&gt;.btn.active{z-index:2}
+.btn-toolbar{font-size:0;margin-top:10px;margin-bottom:10px}.btn-toolbar>.btn+.btn,.btn-toolbar>.btn-group+.btn,.btn-toolbar>.btn+.btn-group{margin-left:5px}
+.btn-group>.btn{position:relative;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+.btn-group>.btn+.btn{margin-left:-1px}
+.btn-group>.btn,.btn-group>.dropdown-menu,.btn-group>.popover{font-size:13px}
+.btn-group>.btn-mini{font-size:9.75px}
+.btn-group>.btn-small{font-size:11.049999999999999px}
+.btn-group>.btn-large{font-size:16.25px}
+.btn-group>.btn:first-child{margin-left:0;-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
+.btn-group>.btn:last-child,.btn-group>.dropdown-toggle{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px;-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px}
+.btn-group>.btn.large:first-child{margin-left:0;-webkit-border-top-left-radius:6px;-moz-border-radius-topleft:6px;border-top-left-radius:6px;-webkit-border-bottom-left-radius:6px;-moz-border-radius-bottomleft:6px;border-bottom-left-radius:6px}
+.btn-group>.btn.large:last-child,.btn-group>.large.dropdown-toggle{-webkit-border-top-right-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;-webkit-border-bottom-right-radius:6px;-moz-border-radius-bottomright:6px;border-bottom-right-radius:6px}
+.btn-group>.btn:hover,.btn-group>.btn:focus,.btn-group>.btn:active,.btn-group>.btn.active{z-index:2}
 .btn-group .dropdown-toggle:active,.btn-group.open .dropdown-toggle{outline:0}
-.btn-group&gt;.btn+.dropdown-toggle{padding-left:8px;padding-right:8px;-webkit-box-shadow:inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);*padding-top:5px;*padding-bottom:5px}
-.btn-group&gt;.btn-mini+.dropdown-toggle{padding-left:5px;padding-right:5px;*padding-top:2px;*padding-bottom:2px}
-.btn-group&gt;.btn-small+.dropdown-toggle{*padding-top:5px;*padding-bottom:4px}
-.btn-group&gt;.btn-large+.dropdown-toggle{padding-left:12px;padding-right:12px;*padding-top:7px;*padding-bottom:7px}
+.btn-group>.btn+.dropdown-toggle{padding-left:8px;padding-right:8px;-webkit-box-shadow:inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);*padding-top:5px;*padding-bottom:5px}
+.btn-group>.btn-mini+.dropdown-toggle{padding-left:5px;padding-right:5px;*padding-top:2px;*padding-bottom:2px}
+.btn-group>.btn-small+.dropdown-toggle{*padding-top:5px;*padding-bottom:4px}
+.btn-group>.btn-large+.dropdown-toggle{padding-left:12px;padding-right:12px;*padding-top:7px;*padding-bottom:7px}
 .btn-group.open .dropdown-toggle{background-image:none;-webkit-box-shadow:inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);box-shadow:inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)}
 .btn-group.open .btn.dropdown-toggle{background-color:#e6e6e6}
 .btn-group.open .btn-primary.dropdown-toggle{background-color:#04c}
@@ -524,12 +577,12 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .dropup .btn-large .caret{border-bottom-width:5px}
 .btn-primary .caret,.btn-warning .caret,.btn-danger .caret,.btn-info .caret,.btn-success .caret,.btn-inverse .caret{border-top-color:#fff;border-bottom-color:#fff}
 .btn-group-vertical{display:inline-block;*display:inline;*zoom:1}
-.btn-group-vertical&gt;.btn{display:block;float:none;max-width:100%;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
-.btn-group-vertical&gt;.btn+.btn{margin-left:0;margin-top:-1px}
-.btn-group-vertical&gt;.btn:first-child{border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0}
-.btn-group-vertical&gt;.btn:last-child{border-radius:0 0 4px 4px;-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px}
-.btn-group-vertical&gt;.btn-large:first-child{border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-moz-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0}
-.btn-group-vertical&gt;.btn-large:last-child{border-radius:0 0 6px 6px;-webkit-border-radius:0 0 6px 6px;-moz-border-radius:0 0 6px 6px;border-radius:0 0 6px 6px}
+.btn-group-vertical>.btn{display:block;float:none;max-width:100%;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+.btn-group-vertical>.btn+.btn{margin-left:0;margin-top:-1px}
+.btn-group-vertical>.btn:first-child{border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0}
+.btn-group-vertical>.btn:last-child{border-radius:0 0 4px 4px;-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px}
+.btn-group-vertical>.btn-large:first-child{border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-moz-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0}
+.btn-group-vertical>.btn-large:last-child{border-radius:0 0 6px 6px;-webkit-border-radius:0 0 6px 6px;-moz-border-radius:0 0 6px 6px;border-radius:0 0 6px 6px}
 .alert{padding:8px 35px 8px 14px;margin-bottom:20px;text-shadow:0 1px 0 rgba(255,255,255,0.5);background-color:#fcf8e3;border:1px solid #fbeed5;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
 .alert,.alert h4{color:#c09853}
 .alert h4{margin:0}
@@ -541,40 +594,40 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .alert-info{background-color:#d9edf7;border-color:#bce8f1;color:#3a87ad}
 .alert-info h4{color:#3a87ad}
 .alert-block{padding-top:14px;padding-bottom:14px}
-.alert-block&gt;p,.alert-block&gt;ul{margin-bottom:0}
+.alert-block>p,.alert-block>ul{margin-bottom:0}
 .alert-block p+p{margin-top:5px}
 .nav{margin-left:0;margin-bottom:20px;list-style:none}
-.nav&gt;li&gt;a{display:block}
-.nav&gt;li&gt;a:hover,.nav&gt;li&gt;a:focus{text-decoration:none;background-color:#eee}
-.nav&gt;li&gt;a&gt;img{max-width:none}
-.nav&gt;.pull-right{float:right}
+.nav>li>a{display:block}
+.nav>li>a:hover,.nav>li>a:focus{text-decoration:none;background-color:#eee}
+.nav>li>a>img{max-width:none}
+.nav>.pull-right{float:right}
 .nav-header{display:block;padding:3px 15px;font-size:11px;font-weight:bold;line-height:20px;color:#999;text-shadow:0 1px 0 rgba(255,255,255,0.5);text-transform:uppercase}
 .nav li+.nav-header{margin-top:9px}
 .nav-list{padding-left:15px;padding-right:15px;margin-bottom:0}
-.nav-list&gt;li&gt;a,.nav-list .nav-header{margin-left:-15px;margin-right:-15px;text-shadow:0 1px 0 rgba(255,255,255,0.5)}
-.nav-list&gt;li&gt;a{padding:3px 15px}
-.nav-list&gt;.active&gt;a,.nav-list&gt;.active&gt;a:hover,.nav-list&gt;.active&gt;a:focus{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.2);background-color:#08c}
+.nav-list>li>a,.nav-list .nav-header{margin-left:-15px;margin-right:-15px;text-shadow:0 1px 0 rgba(255,255,255,0.5)}
+.nav-list>li>a{padding:3px 15px}
+.nav-list>.active>a,.nav-list>.active>a:hover,.nav-list>.active>a:focus{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.2);background-color:#08c}
 .nav-list [class^="icon-"],.nav-list [class*=" icon-"]{margin-right:2px}
 .nav-list .divider{*width:100%;height:1px;margin:9px 1px;*margin:-5px 0 5px;overflow:hidden;background-color:#e5e5e5;border-bottom:1px solid #fff}
 .nav-tabs,.nav-pills{*zoom:1}.nav-tabs:before,.nav-pills:before,.nav-tabs:after,.nav-pills:after{display:table;content:"";line-height:0}
 .nav-tabs:after,.nav-pills:after{clear:both}
-.nav-tabs&gt;li,.nav-pills&gt;li{float:left}
-.nav-tabs&gt;li&gt;a,.nav-pills&gt;li&gt;a{padding-right:12px;padding-left:12px;margin-right:2px;line-height:14px}
+.nav-tabs>li,.nav-pills>li{float:left}
+.nav-tabs>li>a,.nav-pills>li>a{padding-right:12px;padding-left:12px;margin-right:2px;line-height:14px}
 .nav-tabs{border-bottom:1px solid #ddd}
-.nav-tabs&gt;li{margin-bottom:-1px}
-.nav-tabs&gt;li&gt;a{padding-top:8px;padding-bottom:8px;line-height:20px;border:1px solid transparent;border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0}.nav-tabs&gt;li&gt;a:hover,.nav-tabs&gt;li&gt;a:focus{border-color:#eee #eee #ddd}
-.nav-tabs&gt;.active&gt;a,.nav-tabs&gt;.active&gt;a:hover,.nav-tabs&gt;.active&gt;a:focus{color:#555;background-color:#fff;border:1px solid #ddd;border-bottom-color:transparent;cursor:default}
-.nav-pills&gt;li&gt;a{padding-top:8px;padding-bottom:8px;margin-top:2px;margin-bottom:2px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
-.nav-pills&gt;.active&gt;a,.nav-pills&gt;.active&gt;a:hover,.nav-pills&gt;.active&gt;a:focus{color:#fff;background-color:#08c}
-.nav-stacked&gt;li{float:none}
-.nav-stacked&gt;li&gt;a{margin-right:0}
+.nav-tabs>li{margin-bottom:-1px}
+.nav-tabs>li>a{padding-top:8px;padding-bottom:8px;line-height:20px;border:1px solid transparent;border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0}.nav-tabs>li>a:hover,.nav-tabs>li>a:focus{border-color:#eee #eee #ddd}
+.nav-tabs>.active>a,.nav-tabs>.active>a:hover,.nav-tabs>.active>a:focus{color:#555;background-color:#fff;border:1px solid #ddd;border-bottom-color:transparent;cursor:default}
+.nav-pills>li>a{padding-top:8px;padding-bottom:8px;margin-top:2px;margin-bottom:2px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+.nav-pills>.active>a,.nav-pills>.active>a:hover,.nav-pills>.active>a:focus{color:#fff;background-color:#08c}
+.nav-stacked>li{float:none}
+.nav-stacked>li>a{margin-right:0}
 .nav-tabs.nav-stacked{border-bottom:0}
-.nav-tabs.nav-stacked&gt;li&gt;a{border:1px solid #ddd;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
-.nav-tabs.nav-stacked&gt;li:first-child&gt;a{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px;-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px}
-.nav-tabs.nav-stacked&gt;li:last-child&gt;a{-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
-.nav-tabs.nav-stacked&gt;li&gt;a:hover,.nav-tabs.nav-stacked&gt;li&gt;a:focus{border-color:#ddd;z-index:2}
-.nav-pills.nav-stacked&gt;li&gt;a{margin-bottom:3px}
-.nav-pills.nav-stacked&gt;li:last-child&gt;a{margin-bottom:1px}
+.nav-tabs.nav-stacked>li>a{border:1px solid #ddd;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+.nav-tabs.nav-stacked>li:first-child>a{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px;-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px}
+.nav-tabs.nav-stacked>li:last-child>a{-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
+.nav-tabs.nav-stacked>li>a:hover,.nav-tabs.nav-stacked>li>a:focus{border-color:#ddd;z-index:2}
+.nav-pills.nav-stacked>li>a{margin-bottom:3px}
+.nav-pills.nav-stacked>li:last-child>a{margin-bottom:1px}
 .nav-tabs .dropdown-menu{border-radius:0 0 6px 6px;-webkit-border-radius:0 0 6px 6px;-moz-border-radius:0 0 6px 6px;border-radius:0 0 6px 6px}
 .nav-pills .dropdown-menu{border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px}
 .nav .dropdown-toggle .caret{border-top-color:#08c;border-bottom-color:#08c;margin-top:6px}
@@ -582,62 +635,62 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .nav-tabs .dropdown-toggle .caret{margin-top:8px}
 .nav .active .dropdown-toggle .caret{border-top-color:#fff;border-bottom-color:#fff}
 .nav-tabs .active .dropdown-toggle .caret{border-top-color:#555;border-bottom-color:#555}
-.nav&gt;.dropdown.active&gt;a:hover,.nav&gt;.dropdown.active&gt;a:focus{cursor:pointer}
-.nav-tabs .open .dropdown-toggle,.nav-pills .open .dropdown-toggle,.nav&gt;li.dropdown.open.active&gt;a:hover,.nav&gt;li.dropdown.open.active&gt;a:focus{color:#fff;background-color:#999;border-color:#999}
+.nav>.dropdown.active>a:hover,.nav>.dropdown.active>a:focus{cursor:pointer}
+.nav-tabs .open .dropdown-toggle,.nav-pills .open .dropdown-toggle,.nav>li.dropdown.open.active>a:hover,.nav>li.dropdown.open.active>a:focus{color:#fff;background-color:#999;border-color:#999}
 .nav li.dropdown.open .caret,.nav li.dropdown.open.active .caret,.nav li.dropdown.open a:hover .caret,.nav li.dropdown.open a:focus .caret{border-top-color:#fff;border-bottom-color:#fff;opacity:1;filter:alpha(opacity=100)}
-.tabs-stacked .open&gt;a:hover,.tabs-stacked .open&gt;a:focus{border-color:#999}
+.tabs-stacked .open>a:hover,.tabs-stacked .open>a:focus{border-color:#999}
 .tabbable{*zoom:1}.tabbable:before,.tabbable:after{display:table;content:"";line-height:0}
 .tabbable:after{clear:both}
 .tab-content{overflow:auto}
-.tabs-below&gt;.nav-tabs,.tabs-right&gt;.nav-tabs,.tabs-left&gt;.nav-tabs{border-bottom:0}
-.tab-content&gt;.tab-pane,.pill-content&gt;.pill-pane{display:none}
-.tab-content&gt;.active,.pill-content&gt;.active{display:block}
-.tabs-below&gt;.nav-tabs{border-top:1px solid #ddd}
-.tabs-below&gt;.nav-tabs&gt;li{margin-top:-1px;margin-bottom:0}
-.tabs-below&gt;.nav-tabs&gt;li&gt;a{border-radius:0 0 4px 4px;-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px}.tabs-below&gt;.nav-tabs&gt;li&gt;a:hover,.tabs-below&gt;.nav-tabs&gt;li&gt;a:focus{border-bottom-color:transparent;border-top-color:#ddd}
-.tabs-below&gt;.nav-tabs&gt;.active&gt;a,.tabs-below&gt;.nav-tabs&gt;.active&gt;a:hover,.tabs-below&gt;.nav-tabs&gt;.active&gt;a:focus{border-color:transparent #ddd #ddd #ddd}
-.tabs-left&gt;.nav-tabs&gt;li,.tabs-right&gt;.nav-tabs&gt;li{float:none}
-.tabs-left&gt;.nav-tabs&gt;li&gt;a,.tabs-right&gt;.nav-tabs&gt;li&gt;a{min-width:74px;margin-right:0;margin-bottom:3px}
-.tabs-left&gt;.nav-tabs{float:left;margin-right:19px;border-right:1px solid #ddd}
-.tabs-left&gt;.nav-tabs&gt;li&gt;a{margin-right:-1px;border-radius:4px 0 0 4px;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px}
-.tabs-left&gt;.nav-tabs&gt;li&gt;a:hover,.tabs-left&gt;.nav-tabs&gt;li&gt;a:focus{border-color:#eee #ddd #eee #eee}
-.tabs-left&gt;.nav-tabs .active&gt;a,.tabs-left&gt;.nav-tabs .active&gt;a:hover,.tabs-left&gt;.nav-tabs .active&gt;a:focus{border-color:#ddd transparent #ddd #ddd;*border-right-color:#fff}
-.tabs-right&gt;.nav-tabs{float:right;margin-left:19px;border-left:1px solid #ddd}
-.tabs-right&gt;.nav-tabs&gt;li&gt;a{margin-left:-1px;border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}
-.tabs-right&gt;.nav-tabs&gt;li&gt;a:hover,.tabs-right&gt;.nav-tabs&gt;li&gt;a:focus{border-color:#eee #eee #eee #ddd}
-.tabs-right&gt;.nav-tabs .active&gt;a,.tabs-right&gt;.nav-tabs .active&gt;a:hover,.tabs-right&gt;.nav-tabs .active&gt;a:focus{border-color:#ddd #ddd #ddd transparent;*border-left-color:#fff}
-.nav&gt;.disabled&gt;a{color:#999}
-.nav&gt;.disabled&gt;a:hover,.nav&gt;.disabled&gt;a:focus{text-decoration:none;background-color:transparent;cursor:default}
+.tabs-below>.nav-tabs,.tabs-right>.nav-tabs,.tabs-left>.nav-tabs{border-bottom:0}
+.tab-content>.tab-pane,.pill-content>.pill-pane{display:none}
+.tab-content>.active,.pill-content>.active{display:block}
+.tabs-below>.nav-tabs{border-top:1px solid #ddd}
+.tabs-below>.nav-tabs>li{margin-top:-1px;margin-bottom:0}
+.tabs-below>.nav-tabs>li>a{border-radius:0 0 4px 4px;-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px}.tabs-below>.nav-tabs>li>a:hover,.tabs-below>.nav-tabs>li>a:focus{border-bottom-color:transparent;border-top-color:#ddd}
+.tabs-below>.nav-tabs>.active>a,.tabs-below>.nav-tabs>.active>a:hover,.tabs-below>.nav-tabs>.active>a:focus{border-color:transparent #ddd #ddd #ddd}
+.tabs-left>.nav-tabs>li,.tabs-right>.nav-tabs>li{float:none}
+.tabs-left>.nav-tabs>li>a,.tabs-right>.nav-tabs>li>a{min-width:74px;margin-right:0;margin-bottom:3px}
+.tabs-left>.nav-tabs{float:left;margin-right:19px;border-right:1px solid #ddd}
+.tabs-left>.nav-tabs>li>a{margin-right:-1px;border-radius:4px 0 0 4px;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px}
+.tabs-left>.nav-tabs>li>a:hover,.tabs-left>.nav-tabs>li>a:focus{border-color:#eee #ddd #eee #eee}
+.tabs-left>.nav-tabs .active>a,.tabs-left>.nav-tabs .active>a:hover,.tabs-left>.nav-tabs .active>a:focus{border-color:#ddd transparent #ddd #ddd;*border-right-color:#fff}
+.tabs-right>.nav-tabs{float:right;margin-left:19px;border-left:1px solid #ddd}
+.tabs-right>.nav-tabs>li>a{margin-left:-1px;border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}
+.tabs-right>.nav-tabs>li>a:hover,.tabs-right>.nav-tabs>li>a:focus{border-color:#eee #eee #eee #ddd}
+.tabs-right>.nav-tabs .active>a,.tabs-right>.nav-tabs .active>a:hover,.tabs-right>.nav-tabs .active>a:focus{border-color:#ddd #ddd #ddd transparent;*border-left-color:#fff}
+.nav>.disabled>a{color:#999}
+.nav>.disabled>a:hover,.nav>.disabled>a:focus{text-decoration:none;background-color:transparent;cursor:default}
 .nav-collapse.collapse{height:auto;overflow:visible}
 .btn-navbar .icon-bar+.icon-bar{margin-top:3px}
-.breadcrumb{padding:8px 15px;margin:0 0 20px;list-style:none;background-color:#f5f5f5;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.breadcrumb&gt;li{display:inline-block;*display:inline;*zoom:1;text-shadow:0 1px 0 #fff}.breadcrumb&gt;li&gt;.divider{padding:0 5px;color:#ccc}
-.breadcrumb&gt;.active{color:#999}
+.breadcrumb{padding:8px 15px;margin:0 0 20px;list-style:none;background-color:#f5f5f5;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.breadcrumb>li{display:inline-block;*display:inline;*zoom:1;text-shadow:0 1px 0 #fff}.breadcrumb>li>.divider{padding:0 5px;color:#ccc}
+.breadcrumb>.active{color:#999}
 .pagination{margin:20px 0}
 .pagination ul{display:inline-block;*display:inline;*zoom:1;margin-left:0;margin-bottom:0;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.05);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.05);box-shadow:0 1px 2px rgba(0,0,0,0.05)}
-.pagination ul&gt;li{display:inline}
-.pagination ul&gt;li&gt;a,.pagination ul&gt;li&gt;span{float:left;padding:4px 12px;line-height:20px;text-decoration:none;background-color:#fff;border:1px solid #ddd;border-left-width:0}
-.pagination ul&gt;li&gt;a:hover,.pagination ul&gt;li&gt;a:focus,.pagination ul&gt;.active&gt;a,.pagination ul&gt;.active&gt;span{background-color:#f5f5f5}
-.pagination ul&gt;.active&gt;a,.pagination ul&gt;.active&gt;span{color:#999;cursor:default}
-.pagination ul&gt;.disabled&gt;span,.pagination ul&gt;.disabled&gt;a,.pagination ul&gt;.disabled&gt;a:hover,.pagination ul&gt;.disabled&gt;a:focus{color:#999;background-color:transparent;cursor:default}
-.pagination ul&gt;li:first-child&gt;a,.pagination ul&gt;li:first-child&gt;span{border-left-width:1px;-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
-.pagination ul&gt;li:last-child&gt;a,.pagination ul&gt;li:last-child&gt;span{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px;-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px}
+.pagination ul>li{display:inline}
+.pagination ul>li>a,.pagination ul>li>span{float:left;padding:4px 12px;line-height:20px;text-decoration:none;background-color:#fff;border:1px solid #ddd;border-left-width:0}
+.pagination ul>li>a:hover,.pagination ul>li>a:focus,.pagination ul>.active>a,.pagination ul>.active>span{background-color:#f5f5f5}
+.pagination ul>.active>a,.pagination ul>.active>span{color:#999;cursor:default}
+.pagination ul>.disabled>span,.pagination ul>.disabled>a,.pagination ul>.disabled>a:hover,.pagination ul>.disabled>a:focus{color:#999;background-color:transparent;cursor:default}
+.pagination ul>li:first-child>a,.pagination ul>li:first-child>span{border-left-width:1px;-webkit-border-top-left-radius:4px;-moz-border-radius-topleft:4px;border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomleft:4px;border-bottom-left-radius:4px}
+.pagination ul>li:last-child>a,.pagination ul>li:last-child>span{-webkit-border-top-right-radius:4px;-moz-border-radius-topright:4px;border-top-right-radius:4px;-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;border-bottom-right-radius:4px}
 .pagination-centered{text-align:center}
 .pagination-right{text-align:right}
-.pagination-large ul&gt;li&gt;a,.pagination-large ul&gt;li&gt;span{padding:11px 19px;font-size:16.25px}
-.pagination-large ul&gt;li:first-child&gt;a,.pagination-large ul&gt;li:first-child&gt;span{-webkit-border-top-left-radius:6px;-moz-border-radius-topleft:6px;border-top-left-radius:6px;-webkit-border-bottom-left-radius:6px;-moz-border-radius-bottomleft:6px;border-bottom-left-radius:6px}
-.pagination-large ul&gt;li:last-child&gt;a,.pagination-large ul&gt;li:last-child&gt;span{-webkit-border-top-right-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;-webkit-border-bottom-right-radius:6px;-moz-border-radius-bottomright:6px;border-bottom-right-radius:6px}
-.pagination-mini ul&gt;li:first-child&gt;a,.pagination-small ul&gt;li:first-child&gt;a,.pagination-mini ul&gt;li:first-child&gt;span,.pagination-small ul&gt;li:first-child&gt;span{-webkit-border-top-left-radius:3px;-moz-border-radius-topleft:3px;border-top-left-radius:3px;-webkit-border-bottom-left-radius:3px;-moz-border-radius-bottomleft:3px;border-bottom-left-radius:3px}
-.pagination-mini ul&gt;li:last-child&gt;a,.pagination-small ul&gt;li:last-child&gt;a,.pagination-mini ul&gt;li:last-child&gt;span,.pagination-small ul&gt;li:last-child&gt;span{-webkit-border-top-right-radius:3px;-moz-border-radius-topright:3px;border-top-right-radius:3px;-webkit-border-bottom-right-radius:3px;-moz-border-radius-bottomright:3px;border-bottom-right-radius:3px}
-.pagination-small ul&gt;li&gt;a,.pagination-small ul&gt;li&gt;span{padding:2px 10px;font-size:11.049999999999999px}
-.pagination-mini ul&gt;li&gt;a,.pagination-mini ul&gt;li&gt;span{padding:0 6px;font-size:9.75px}
+.pagination-large ul>li>a,.pagination-large ul>li>span{padding:11px 19px;font-size:16.25px}
+.pagination-large ul>li:first-child>a,.pagination-large ul>li:first-child>span{-webkit-border-top-left-radius:6px;-moz-border-radius-topleft:6px;border-top-left-radius:6px;-webkit-border-bottom-left-radius:6px;-moz-border-radius-bottomleft:6px;border-bottom-left-radius:6px}
+.pagination-large ul>li:last-child>a,.pagination-large ul>li:last-child>span{-webkit-border-top-right-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;-webkit-border-bottom-right-radius:6px;-moz-border-radius-bottomright:6px;border-bottom-right-radius:6px}
+.pagination-mini ul>li:first-child>a,.pagination-small ul>li:first-child>a,.pagination-mini ul>li:first-child>span,.pagination-small ul>li:first-child>span{-webkit-border-top-left-radius:3px;-moz-border-radius-topleft:3px;border-top-left-radius:3px;-webkit-border-bottom-left-radius:3px;-moz-border-radius-bottomleft:3px;border-bottom-left-radius:3px}
+.pagination-mini ul>li:last-child>a,.pagination-small ul>li:last-child>a,.pagination-mini ul>li:last-child>span,.pagination-small ul>li:last-child>span{-webkit-border-top-right-radius:3px;-moz-border-radius-topright:3px;border-top-right-radius:3px;-webkit-border-bottom-right-radius:3px;-moz-border-radius-bottomright:3px;border-bottom-right-radius:3px}
+.pagination-small ul>li>a,.pagination-small ul>li>span{padding:2px 10px;font-size:11.049999999999999px}
+.pagination-mini ul>li>a,.pagination-mini ul>li>span{padding:0 6px;font-size:9.75px}
 .pager{margin:20px 0;list-style:none;text-align:center;*zoom:1}.pager:before,.pager:after{display:table;content:"";line-height:0}
 .pager:after{clear:both}
 .pager li{display:inline}
-.pager li&gt;a,.pager li&gt;span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}
-.pager li&gt;a:hover,.pager li&gt;a:focus{text-decoration:none;background-color:#f5f5f5}
-.pager .next&gt;a,.pager .next&gt;span{float:right}
-.pager .previous&gt;a,.pager .previous&gt;span{float:left}
-.pager .disabled&gt;a,.pager .disabled&gt;a:hover,.pager .disabled&gt;a:focus,.pager .disabled&gt;span{color:#999;background-color:#fff;cursor:default}
+.pager li>a,.pager li>span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}
+.pager li>a:hover,.pager li>a:focus{text-decoration:none;background-color:#f5f5f5}
+.pager .next>a,.pager .next>span{float:right}
+.pager .previous>a,.pager .previous>span{float:left}
+.pager .disabled>a,.pager .disabled>a:hover,.pager .disabled>a:focus,.pager .disabled>span{color:#999;background-color:#fff;cursor:default}
 .modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000}.modal-backdrop.fade{opacity:0}
 .modal-backdrop,.modal-backdrop.fade.in{opacity:.8;filter:alpha(opacity=80)}
 .modal{position:fixed;top:10%;left:50%;z-index:1050;width:560px;margin-left:-280px;background-color:#fff;border:1px solid #999;border:1px solid rgba(0,0,0,0.3);*border:1px solid #999;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 3px 7px rgba(0,0,0,0.3);-moz-box-shadow:0 3px 7px rgba(0,0,0,0.3);box-shadow:0 3px 7px rgba(0,0,0,0.3);-webkit-background-clip:padding-box;-moz-background-clip:padding-box;background-clip:padding-box;outline:none}.modal.fade{-webkit-transition:opacity .3s linear, top .3s ease-out;-moz-transition:opacity .3s linear, top .3s ease-out;-o-transition:opacity .3s linear, top .3s ease-out;transition:opacity .3s linear, top .3s ease-out;top:-25%}
@@ -678,17 +731,17 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .thumbnails{margin-left:-20px;list-style:none;*zoom:1}.thumbnails:before,.thumbnails:after{display:table;content:"";line-height:0}
 .thumbnails:after{clear:both}
 .row-fluid .thumbnails{margin-left:0}
-.thumbnails&gt;li{float:left;margin-bottom:20px;margin-left:20px}
+.thumbnails>li{float:left;margin-bottom:20px;margin-left:20px}
 .thumbnail{display:block;padding:4px;line-height:20px;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.055);-moz-box-shadow:0 1px 3px rgba(0,0,0,0.055);box-shadow:0 1px 3px rgba(0,0,0,0.055);-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
-.thumbnail&gt;img{display:block;max-width:100%;margin-left:auto;margin-right:auto}
+.thumbnail>img{display:block;max-width:100%;margin-left:auto;margin-right:auto}
 .thumbnail .caption{padding:9px;color:#555}
 .media,.media-body{overflow:hidden;*overflow:visible;zoom:1}
 .media,.media .media{margin-top:15px}
 .media:first-child{margin-top:0}
 .media-object{display:block}
 .media-heading{margin:0 0 5px}
-.media&gt;.pull-left{margin-right:10px}
-.media&gt;.pull-right{margin-left:10px}
+.media>.pull-left{margin-right:10px}
+.media>.pull-right{margin-left:10px}
 .media-list{margin-left:0;list-style:none}
 .label,.badge{display:inline-block;padding:2px 4px;font-size:10.998px;font-weight:bold;line-height:14px;color:#fff;vertical-align:baseline;white-space:nowrap;text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#999}
 .label{border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
@@ -727,15 +780,15 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .accordion-inner{padding:9px 15px;border-top:1px solid #e5e5e5}
 .carousel{position:relative;margin-bottom:20px;line-height:1}
 .carousel-inner{overflow:hidden;width:100%;position:relative}
-.carousel-inner&gt;.item{display:none;position:relative;-webkit-transition:.6s ease-in-out left;-moz-transition:.6s ease-in-out left;-o-transition:.6s ease-in-out left;transition:.6s ease-in-out left}.carousel-inner&gt;.item&gt;img,.carousel-inner&gt;.item&gt;a&gt;img{display:block;line-height:1}
-.carousel-inner&gt;.active,.carousel-inner&gt;.next,.carousel-inner&gt;.prev{display:block}
-.carousel-inner&gt;.active{left:0}
-.carousel-inner&gt;.next,.carousel-inner&gt;.prev{position:absolute;top:0;width:100%}
-.carousel-inner&gt;.next{left:100%}
-.carousel-inner&gt;.prev{left:-100%}
-.carousel-inner&gt;.next.left,.carousel-inner&gt;.prev.right{left:0}
-.carousel-inner&gt;.active.left{left:-100%}
-.carousel-inner&gt;.active.right{left:100%}
+.carousel-inner>.item{display:none;position:relative;-webkit-transition:.6s ease-in-out left;-moz-transition:.6s ease-in-out left;-o-transition:.6s ease-in-out left;transition:.6s ease-in-out left}.carousel-inner>.item>img,.carousel-inner>.item>a>img{display:block;line-height:1}
+.carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev{display:block}
+.carousel-inner>.active{left:0}
+.carousel-inner>.next,.carousel-inner>.prev{position:absolute;top:0;width:100%}
+.carousel-inner>.next{left:100%}
+.carousel-inner>.prev{left:-100%}
+.carousel-inner>.next.left,.carousel-inner>.prev.right{left:0}
+.carousel-inner>.active.left{left:-100%}
+.carousel-inner>.active.right{left:100%}
 .carousel-control{position:absolute;top:40%;left:15px;width:40px;height:40px;margin-top:-20px;font-size:60px;font-weight:100;line-height:30px;color:#fff;text-align:center;background:#222;border:3px solid #fff;-webkit-border-radius:23px;-moz-border-radius:23px;border-radius:23px;opacity:.5;filter:alpha(opacity=50)}.carousel-control.right{left:auto;right:15px}
 .carousel-control:hover,.carousel-control:focus{color:#fff;text-decoration:none;opacity:.9;filter:alpha(opacity=90)}
 .carousel-indicators{position:absolute;top:15px;right:15px;z-index:5;margin:0;list-style:none}.carousel-indicators li{display:block;float:left;width:10px;height:10px;margin-left:5px;text-indent:-999px;background-color:#ccc;background-color:rgba(255,255,255,0.25);border-radius:5px}
@@ -760,7 +813,7 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 [class^="icon-"]:before,[class*=" icon-"]:before{text-decoration:inherit;display:inline-block;speak:none}
 .icon-large:before{vertical-align:-10%;font-size:1.3333333333333333em}
 [class^="icon-"].icon-fixed-width,[class*=" icon-"].icon-fixed-width{display:inline-block;width:1.1428571428571428em;text-align:right;padding-right:.2857142857142857em}[class^="icon-"].icon-fixed-width.icon-large,[class*=" icon-"].icon-fixed-width.icon-large{width:1.4285714285714286em}
-.icons-ul{margin-left:2.142857142857143em;list-style-type:none}.icons-ul&gt;li{position:relative}
+.icons-ul{margin-left:2.142857142857143em;list-style-type:none}.icons-ul>li{position:relative}
 .icons-ul .icon-li{position:absolute;left:-2.142857142857143em;width:2.142857142857143em;text-align:center;line-height:inherit}
 [class^="icon-"].hide,[class*=" icon-"].hide{display:none}
 .icon-muted{color:#eee}
@@ -776,7 +829,7 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 [class^="icon-"].pull-left,[class*=" icon-"].pull-left{margin-right:.3em}
 [class^="icon-"].pull-right,[class*=" icon-"].pull-right{margin-left:.3em}
 [class^="icon-"],[class*=" icon-"]{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}
-.icon-white,.nav-pills&gt;.active&gt;a&gt;[class^="icon-"],.nav-pills&gt;.active&gt;a&gt;[class*=" icon-"],.nav-list&gt;.active&gt;a&gt;[class^="icon-"],.nav-list&gt;.active&gt;a&gt;[class*=" icon-"],.navbar-inverse .nav&gt;.active&gt;a&gt;[class^="icon-"],.navbar-inverse .nav&gt;.active&gt;a&gt;[class*=" icon-"],.dropdown-menu&gt;li&gt;a:hover&gt;[class^="icon-"],.dropdown-menu&gt;li&gt;a:hover&gt;[class*=" icon-"],.dropdown-menu&gt;.active&gt;a&gt;[class^="icon-"],.dropdown-menu&gt;.active&gt;a&gt;[class*=" icon-"],.dropdown-submenu:hover&gt;a&gt;[class^="icon-"],.dropdown-submenu:hover&gt;a&gt;[class*=" icon-"]{background-image:none}
+.icon-white,.nav-pills>.active>a>[class^="icon-"],.nav-pills>.active>a>[class*=" icon-"],.nav-list>.active>a>[class^="icon-"],.nav-list>.active>a>[class*=" icon-"],.navbar-inverse .nav>.active>a>[class^="icon-"],.navbar-inverse .nav>.active>a>[class*=" icon-"],.dropdown-menu>li>a:hover>[class^="icon-"],.dropdown-menu>li>a:hover>[class*=" icon-"],.dropdown-menu>.active>a>[class^="icon-"],.dropdown-menu>.active>a>[class*=" icon-"],.dropdown-submenu:hover>a>[class^="icon-"],.dropdown-submenu:hover>a>[class*=" icon-"]{background-image:none}
 .btn [class^="icon-"].icon-large,.nav [class^="icon-"].icon-large,.btn [class*=" icon-"].icon-large,.nav [class*=" icon-"].icon-large{line-height:.9em}
 .btn [class^="icon-"].icon-spin,.nav [class^="icon-"].icon-spin,.btn [class*=" icon-"].icon-spin,.nav [class*=" icon-"].icon-spin{display:inline-block}
 .nav-tabs [class^="icon-"],.nav-pills [class^="icon-"],.nav-tabs [class*=" icon-"],.nav-pills [class*=" icon-"],.nav-tabs [class^="icon-"].icon-large,.nav-pills [class^="icon-"].icon-large,.nav-tabs [class*=" icon-"].icon-large,.nav-pills [class*=" icon-"].icon-large{line-height:.9em}
@@ -1159,9 +1212,9 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .border-box-sizing{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 .corner-all{border-radius:4px}
 .hbox{display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}
-.hbox&gt;*{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none}
+.hbox>*{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none}
 .vbox{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}
-.vbox&gt;*{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none}
+.vbox>*{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none}
 .hbox.reverse,.vbox.reverse,.reverse{-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;flex-direction:row-reverse}
 .hbox.box-flex0,.vbox.box-flex0,.box-flex0{-webkit-box-flex:0;-moz-box-flex:0;box-flex:0;flex:none;width:auto}
 .hbox.box-flex1,.vbox.box-flex1,.box-flex1{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
@@ -1176,8 +1229,8 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .hbox.align-end,.vbox.align-end,.align-end{-webkit-box-align:end;-moz-box-align:end;box-align:end;align-items:flex-end}
 .hbox.align-center,.vbox.align-center,.align-center{-webkit-box-align:center;-moz-box-align:center;box-align:center;align-items:center}
 div.error{margin:2em;text-align:center}
-div.error&gt;h1{font-size:500%;line-height:normal}
-div.error&gt;p{font-size:200%;line-height:normal}
+div.error>h1{font-size:500%;line-height:normal}
+div.error>p{font-size:200%;line-height:normal}
 div.traceback-wrapper{text-align:left;max-width:800px;margin:auto}
 body{background-color:#fff;position:absolute;left:0;right:0;top:0;bottom:0;overflow:visible}
 div#header{display:none}
@@ -1189,7 +1242,7 @@ div#header{display:none}
 input.ui-button{padding:.3em .9em}
 span#login_widget{float:right}
 .nav-header{text-transform:none}
-#header&gt;span{margin-top:10px}
+#header>span{margin-top:10px}
 .modal_stretch{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;height:80%}.modal_stretch .modal-body{max-height:none;flex:1}
 .alternate_upload{background-color:none;display:inline}
 .alternate_upload.form{padding:0;margin:0}
@@ -1198,11 +1251,11 @@ span#login_widget{float:right}
 .list_toolbar [class*="span"]{min-height:26px}
 .list_header{font-weight:bold}
 .list_container{margin-top:4px;margin-bottom:20px;border:1px solid #ababab;border-radius:4px}
-.list_container&gt;div{border-bottom:1px solid #ababab}.list_container&gt;div:hover .list-item{background-color:#f00}
-.list_container&gt;div:last-child{border:none}
+.list_container>div{border-bottom:1px solid #ababab}.list_container>div:hover .list-item{background-color:#f00}
+.list_container>div:last-child{border:none}
 .list_item:hover .list_item{background-color:#ddd}
 .list_item a{text-decoration:none}
-.list_header&gt;div,.list_item&gt;div{padding-top:4px;padding-bottom:4px;padding-left:7px;padding-right:7px;height:22px;line-height:22px}
+.list_header>div,.list_item>div{padding-top:4px;padding-bottom:4px;padding-left:7px;padding-right:7px;height:22px;line-height:22px}
 .item_name{line-height:22px;height:26px}
 .item_icon{font-size:14px;color:#5e5e5e;margin-right:7px}
 .item_buttons{line-height:1em}
@@ -1210,7 +1263,7 @@ span#login_widget{float:right}
 input.nbname_input,input.engine_num_input{padding-top:3px;padding-bottom:3px;height:14px;line-height:14px;margin:0}
 input.engine_num_input{width:60px}
 .highlight_text{color:#00f}
-#project_name&gt;.breadcrumb{padding:0;margin-bottom:0;background-color:transparent;font-weight:bold}
+#project_name>.breadcrumb{padding:0;margin-bottom:0;background-color:transparent;font-weight:bold}
 .folder_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:"\f114"}
 .notebook_icon:before{font-family:FontAwesome;font-weight:normal;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;*margin-right:.3em;content:"\f02d"}
 .ansibold{font-weight:bold}
@@ -1237,8 +1290,8 @@ div.prompt{min-width:11ex;padding:.4em;margin:0;font-family:monospace;text-align
 div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;line-height:1.21429em}
 div.prompt:empty{padding-top:0;padding-bottom:0}
 div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}
-div.input_area&gt;div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}
-div.input_area&gt;div.highlight&gt;pre{margin:0;border:none;padding:0;background-color:transparent}
+div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}
+div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}
 .CodeMirror{line-height:1.21429em;height:auto;background:none;}
 .CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}
 .CodeMirror-lines{padding:.4em}
@@ -1315,7 +1368,7 @@ div.ui-widget-content{border:1px solid #ababab;outline:none}
 .end_space{height:200px}
 .celltoolbar{border:thin solid #cfcfcf;border-bottom:none;background:#eee;border-radius:3px 3px 0 0;width:100%;-webkit-box-pack:end;height:22px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch;-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;flex-direction:row-reverse}
 .ctb_hideshow{display:none;vertical-align:bottom;padding-right:2px}
-.celltoolbar&gt;div{padding-top:0}
+.celltoolbar>div{padding-top:0}
 .ctb_global_show .ctb_show.ctb_hideshow{display:block}
 .ctb_global_show .ctb_show+.input_area,.ctb_global_show .ctb_show+div.text_cell_input{border-top-right-radius:0;border-top-left-radius:0}
 .celltoolbar .button_container select{margin:10px;margin-top:1px;margin-bottom:0;padding:0;font-size:87%;width:auto;display:inline-block;height:18px;line-height:18px;vertical-align:top}
@@ -1359,8 +1412,8 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .ipython_tooltip .tooltiptext pre{border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;font-size:100%;background-color:#f7f7f7}
 .pretooltiparrow{left:0;margin:0;top:-16px;width:40px;height:16px;overflow:hidden;position:absolute}
 .pretooltiparrow:before{background-color:#f7f7f7;border:1px #ababab solid;z-index:11;content:"";position:absolute;left:15px;top:10px;width:25px;height:25px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg)}
-&lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
@@ -1421,8 +1474,8 @@ span#checkpoint_status,span#autosave_status{font-size:small}
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
 
 /* General text, input and output cells */
 div.cell {
@@ -1468,89 +1521,72 @@ table.dataframe th, td {
     text-align: left;
 }
 
-&lt;/style&gt;
+</style>
 
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Effective-determination-of-interpolants-with-upper-bounds-error."&gt;Effective determination of interpolants with upper bounds error.&lt;a class="anchor-link" href="#Effective-determination-of-interpolants-with-upper-bounds-error."&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From what I've experienced, it is usually bad idea to blindly use a large number of interpolants at equally spaced intervals. It's too lazy. Just because computers have a lot of ram doesn't mean considering effecienty a concern. However, </p>
+<p>As a student in Scientific Computing, I've noticed that if we don't start caring about efficiency now, we never will. </p>
+<p>Consider some spaced out points we wish to use to interpolate our function.</p>
+<p>$$  \alpha &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_n &lt; \beta $$.</p>
+<p><strong>How do we pick the best spacing?</strong></p>
+<p>In school for the most part we really just do this naively. If I want to plot a function between $[\alpha, \beta]$, i just use the linspace function with a really large number of divisions.</p>
+<blockquote>
+<p>Let the subdivisions to go infinity... Lets just pick 10000 or something I guess...</p>
+</blockquote>
+<p>Don't do that.</p>
+<p>Today, I'm going to show you two types of division methods that we can use to figure out how many points to use. </p>
+<p>One will be a static method that uses our knowledge of the <a href="http://en.wikipedia.org/wiki/Taylor&#x27;s_theorem#Explicit_formulae_for_the_remainder">Taylor Remainder Theorem</a>. The other is an adaptive method that recursively finds the best divisions  taking into account the linear behavior of the certain subsections.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Static-Piecewise-Linear-Interpolation">Static Piecewise Linear Interpolation<a class="anchor-link" href="#Static-Piecewise-Linear-Interpolation">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consider the following situation where $y_i = f(x_i)$ for some function $f(x)$ where the $x_i$ are evenly spaced. The following is an example of how to generate the set of $x_i$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [4]:
+</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="sd">"""Set up a piecewise linear interpolant </span>
+<span class="sd">   of sin(2πx) on a uniform, nine-point </span>
+<span class="sd">   partition of [0, 1]"""</span>
 
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;From what I&amp;#39;ve experienced, it is usually bad idea to blindly use a large number of interpolants at equally spaced intervals. It&amp;#39;s too lazy. Just because computers have a lot of ram doesn&amp;#39;t mean considering effecienty a concern. However, &lt;/p&gt;
-&lt;p&gt;As a student in Scientific Computing, I&amp;#39;ve noticed that if we don&amp;#39;t start caring about efficiency now, we never will. &lt;/p&gt;
-&lt;p&gt;Consider some spaced out points we wish to use to interpolate our function.&lt;/p&gt;
-&lt;p&gt;$$  \alpha &amp;lt; x_1 &amp;lt; x_2 &amp;lt; \cdots &amp;lt; x_n &amp;lt; \beta $$.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;How do we pick the best spacing?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In school for the most part we really just do this naively. If I want to plot a function between $[\alpha, \beta]$, i just use the linspace function with a really large number of divisions.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Let the subdivisions to go infinity... Lets just pick 10000 or something I guess...&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Don&amp;#39;t do that.&lt;/p&gt;
-&lt;p&gt;Today, I&amp;#39;m going to show you two types of division methods that we can use to figure out how many points to use. &lt;/p&gt;
-&lt;p&gt;One will be a static method that uses our knowledge of the &lt;a href="http://en.wikipedia.org/wiki/Taylor&amp;#x27;s_theorem#Explicit_formulae_for_the_remainder"&gt;Taylor Remainder Theorem&lt;/a&gt;. The other is an adaptive method that recursively finds the best divisions  taking into account the linear behavior of the certain subsections.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Static-Piecewise-Linear-Interpolation"&gt;Static Piecewise Linear Interpolation&lt;a class="anchor-link" href="#Static-Piecewise-Linear-Interpolation"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Consider the following situation where $y_i = f(x_i)$ for some function $f(x)$ where the $x_i$ are evenly spaced. The following is an example of how to generate the set of $x_i$.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[4]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Set up a piecewise linear interpolant &lt;/span&gt;
-&lt;span class="sd"&gt;   of sin(2πx) on a uniform, nine-point &lt;/span&gt;
-&lt;span class="sd"&gt;   partition of [0, 1]&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
-&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;A piecewise linear function &lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt; with $9$ linearly spaced interpolants&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;o-k&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAuEAAAIRCAYAAADk0mOLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> 
+<span class="n">title</span><span class="p">(</span><span class="s">"A piecewise linear function </span><span class="se">\n</span><span class="s"> with $9$ linearly spaced interpolants"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="s">'o-k'</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x2</span><span class="p">),</span> <span class="s">'-r'</span><span class="p">)</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAuEAAAIRCAYAAADk0mOLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmcjXX/x/HXmX0MQ6vc6SYt7rvlblNJyjRkiwqdlBa6
 CQk3WcLYx6BFojs1lkIJHVvpRgyGVCKqu2jVcBdFv6zDjNnO74/rTMY0y5lx5nzPdeb9fDzmwXXO
 tXzO51zD53zP5/peICIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIlJIXSAPaGQ4jtLMBtZU
@@ -2069,66 +2105,57 @@ QH1gGfChtXaw26pERIJbuOsCRETELWvtHGA3xe+Inwckuq1IRCT4qQkXERGAOcCfgGnW2nzXxYiI
 BDuNo4iIhDhjTBzFc+BrgbbAtdbaH9xWJSIS3PROuIiITAG2W2sTgJXALMf1iIgEPTXhIiIhzBjT
 CWgNPFBy00CgnjGmh7uqRERERERERERERERERERERERERERERERERERERERERERERERERERERERE
 RERERERERERERERERERERETk9Px/ROBWP+e8ogMAAAAASUVORK5CYII=
-"&gt;
-&lt;/div&gt;
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This method has some problems...</p>
+<ol>
+<li>The sine function is fairly tame, and equally dividing up sub intervals does really mess up the plot. A more complex function however may have trouble catching certain details of the function.</li>
+<li>While more intervals give us better answers without much thinking, throwing RAM at a problem may not be really the best solution.</li>
+<li>We are using a series of piecewise linear functions to approximate the function, can we get an upper bound on the error? </li>
+</ol>
+<p>Since I am really just making plots that true interpolation, we will not talk too much about the error of our approximation, we will just look at the graphs and see from there. Perhaps in the future I will write a post on monte carlo integration...</p>
+<p>Consider the example below.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [3]:
+</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="sd">"""Set up a piecewise linear interpolant </span>
+<span class="sd">   of the matlab humps(x) function on a </span>
+<span class="sd">   uniform, nine-point partition of [0, 3]"""</span>
 
-&lt;/div&gt;
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.9</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.04</span><span class="p">))</span> <span class="o">-</span> <span class="mi">6</span>
 
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;This method has some problems...&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The sine function is fairly tame, and equally dividing up sub intervals does really mess up the plot. A more complex function however may have trouble catching certain details of the function.&lt;/li&gt;
-&lt;li&gt;While more intervals give us better answers without much thinking, throwing RAM at a problem may not be really the best solution.&lt;/li&gt;
-&lt;li&gt;We are using a series of piecewise linear functions to approximate the function, can we get an upper bound on the error? &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Since I am really just making plots that true interpolation, we will not talk too much about the error of our approximation, we will just look at the graphs and see from there. Perhaps in the future I will write a post on monte carlo integration...&lt;/p&gt;
-&lt;p&gt;Consider the example below.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[3]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Set up a piecewise linear interpolant &lt;/span&gt;
-&lt;span class="sd"&gt;   of the matlab humps(x) function on a &lt;/span&gt;
-&lt;span class="sd"&gt;   uniform, nine-point partition of [0, 3]&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mf"&gt;0.01&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mf"&gt;0.04&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;
-
-&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3.2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;A tricky function with &lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;9 linear interpolants&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;o-k&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtwAAAIPCAYAAABAAwnoAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-.</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">"A tricky function with </span><span class="se">\n</span><span class="s">9 linear interpolants"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">),</span> <span class="s">'-r'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s">'o-k'</span><span class="p">)</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtwAAAIPCAYAAABAAwnoAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmcVPWV//9XVTV7s0k3O4IsoiCIbRQXXGkXxAWEa0zc
 SFicJL9JYiYzY8ZkksxvMlknyUwmMYIacInR2yCIighEUERRaXcUFUFppKG72ffurvv941ZB0129
 VNetup9b9X4+Hj6ktntP87aT058+93NBRERERERERERERERERERERERERERERERERERERERERERE
@@ -2658,120 +2685,108 @@ gTDQE9gA9AMeMk3zK0sLExFxOLfVBYiIiPUMw2gPbDRN802gL/AmsBD43tLCREREREQSiWEYrQ3D
 eN/qOkREEok+4RYREQzDOM0wjI7A5cA/K5ddbm1VIiKJwWt1ASIiYguZQFPgZ8BvGMZVwGZrSxIR
 ERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 aUj/H4oXfJy0iiT9AAAAAElFTkSuQmCC
-"&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Look at that error! The only places that really match are the flat runs after $x=1.5$ &lt;/p&gt;
-&lt;p&gt;As I&amp;#39;ve mentioned before, many times, computers now can generate a &lt;code&gt;linspace(0,100, 100000)&lt;/code&gt; in no time at all. This doesn&amp;#39;t mean that we have to. Instead, we should be having conversations about errors and how using some math to help us make informed desicions on the step value, instead of just making it arbitrarily large. &lt;/p&gt;
-&lt;h3 id="some-math-"&gt;Some Math.&lt;/h3&gt;
-&lt;p&gt;What we are essentially doing is asserting that on each interval $[x_i, x_{i+1}$ the line segment is approximating our function as the line $L_i(x)$ &lt;/p&gt;
-&lt;p&gt;$$ f(c) = L_i(c) + \text{Some error Term}$$&lt;/p&gt;
-&lt;p&gt;For any point $c \in [x_i, x_{i+1}]$ we can say that $f(c)$ can be approximated as that line, which is the value of our line at $c$ plus some error term.&lt;/p&gt;
-&lt;p&gt;With the assistance of the Taylor Polynomials we learned in first year, we can easily quantify that error.&lt;/p&gt;
-&lt;h3 id="remember-taylor-polynomials-"&gt;Remember Taylor Polynomials???&lt;/h3&gt;
-&lt;p&gt;From calculus we remember that most functions can be expanded as a power series. For a general function $f(x)$, it&amp;#39;s Taylor expansion about the point $x=a$ is as follows:&lt;/p&gt;
-&lt;p&gt;$$f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^2 + \cdots$$ &lt;/p&gt;
-&lt;p&gt;The first thing we will notice is that the first two terms actually correspond to a linear approximation, again, something we&amp;#39;ve all learned in calculus 1,2 and 3.&lt;/p&gt;
-&lt;p&gt;$$f(x) = \overbrace{f(a) + f'(a)(x-a)}^{L(x)} + \frac{f''(a)}{2}(x-a)^2 + \cdots $$ &lt;/p&gt;
-&lt;p&gt;If our memory is &lt;em&gt;really&lt;/em&gt; good, we can also say that by Taylor&amp;#39;s Remainder Theorem the difference between our line and our function can be expressed like so:&lt;/p&gt;
-&lt;p&gt;$$ |F(c) - L(z)| \le \frac{M h^2}{8}$$&lt;/p&gt;
-&lt;p&gt;Where $M$ is an upperbound on  $\left|f''(x) \right|$ over the interval $[\alpha, \beta]$ and $h$ is width of the subdivision. Since we are using our trusty &lt;code&gt;linspace&lt;/code&gt; function, we also know that width of each interval is equal to:&lt;/p&gt;
-&lt;p&gt;$$ h = x_{i+1} - x_i = \left( \frac{\beta-\alpha}{n-1}\right) $$&lt;/p&gt;
-&lt;p&gt;To guarantee that the error between $f$ and our approximation $L$ is less than some tolerance level, say, $\epsilon$, we make the following statement:&lt;/p&gt;
-&lt;p&gt;$$ |f(c) - L(c)| \le \frac{M}{8}\left( \frac{\beta-\alpha}{n-1}\right)^2 \le \epsilon $$&lt;/p&gt;
-&lt;p&gt;From the statement above we can directly see that $n$ must satisfy the condition: &lt;/p&gt;
-&lt;p&gt;$$ n \ge 1 + (\beta - \alpha)\sqrt{M / 8 \epsilon}$$&lt;/p&gt;
-&lt;p&gt;Now, lets implement this. It&amp;#39;s not that hard, it&amp;#39;s just math.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[6]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;static_interpolation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;M2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Static Interpolation of a linear piecewise function&lt;/span&gt;
-&lt;span class="sd"&gt;    &lt;/span&gt;
-&lt;span class="sd"&gt;    Attributes:&lt;/span&gt;
-&lt;span class="sd"&gt;        fn (function) - function we are interpolating&lt;/span&gt;
-&lt;span class="sd"&gt;        M2 (float)    - upper bound on |f&amp;#39;&amp;#39;(x)| over the lower and upper bound&lt;/span&gt;
-&lt;span class="sd"&gt;        lower (float) - lower bount&lt;/span&gt;
-&lt;span class="sd"&gt;        upper (float) - upper bound&lt;/span&gt;
-&lt;span class="sd"&gt;        tolerance (float) - maximun acceptable error&lt;/span&gt;
-&lt;span class="sd"&gt;    &lt;/span&gt;
-&lt;span class="sd"&gt;    Returns:&lt;/span&gt;
-&lt;span class="sd"&gt;        x (numpy.array) - x values&lt;/span&gt;
-&lt;span class="sd"&gt;        y (numpy.array) - y values&lt;/span&gt;
-&lt;span class="sd"&gt;        n (int) - number of divisions&lt;/span&gt;
-&lt;span class="sd"&gt;        &lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Look at that error! The only places that really match are the flat runs after $x=1.5$ </p>
+<p>As I've mentioned before, many times, computers now can generate a <code>linspace(0,100, 100000)</code> in no time at all. This doesn't mean that we have to. Instead, we should be having conversations about errors and how using some math to help us make informed desicions on the step value, instead of just making it arbitrarily large. </p>
+<h3 id="some-math-">Some Math.</h3>
+<p>What we are essentially doing is asserting that on each interval $[x_i, x_{i+1}$ the line segment is approximating our function as the line $L_i(x)$ </p>
+<p>$$ f(c) = L_i(c) + \text{Some error Term}$$</p>
+<p>For any point $c \in [x_i, x_{i+1}]$ we can say that $f(c)$ can be approximated as that line, which is the value of our line at $c$ plus some error term.</p>
+<p>With the assistance of the Taylor Polynomials we learned in first year, we can easily quantify that error.</p>
+<h3 id="remember-taylor-polynomials-">Remember Taylor Polynomials???</h3>
+<p>From calculus we remember that most functions can be expanded as a power series. For a general function $f(x)$, it's Taylor expansion about the point $x=a$ is as follows:</p>
+<p>$$f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^2 + \cdots$$ </p>
+<p>The first thing we will notice is that the first two terms actually correspond to a linear approximation, again, something we've all learned in calculus 1,2 and 3.</p>
+<p>$$f(x) = \overbrace{f(a) + f'(a)(x-a)}^{L(x)} + \frac{f''(a)}{2}(x-a)^2 + \cdots $$ </p>
+<p>If our memory is <em>really</em> good, we can also say that by Taylor's Remainder Theorem the difference between our line and our function can be expressed like so:</p>
+<p>$$ |F(c) - L(z)| \le \frac{M h^2}{8}$$</p>
+<p>Where $M$ is an upperbound on  $\left|f''(x) \right|$ over the interval $[\alpha, \beta]$ and $h$ is width of the subdivision. Since we are using our trusty <code>linspace</code> function, we also know that width of each interval is equal to:</p>
+<p>$$ h = x_{i+1} - x_i = \left( \frac{\beta-\alpha}{n-1}\right) $$</p>
+<p>To guarantee that the error between $f$ and our approximation $L$ is less than some tolerance level, say, $\epsilon$, we make the following statement:</p>
+<p>$$ |f(c) - L(c)| \le \frac{M}{8}\left( \frac{\beta-\alpha}{n-1}\right)^2 \le \epsilon $$</p>
+<p>From the statement above we can directly see that $n$ must satisfy the condition: </p>
+<p>$$ n \ge 1 + (\beta - \alpha)\sqrt{M / 8 \epsilon}$$</p>
+<p>Now, lets implement this. It's not that hard, it's just math.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [6]:
+</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">static_interpolation</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">M2</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+    <span class="sd">"""Static Interpolation of a linear piecewise function</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        fn (function) - function we are interpolating</span>
+<span class="sd">        M2 (float)    - upper bound on |f''(x)| over the lower and upper bound</span>
+<span class="sd">        lower (float) - lower bount</span>
+<span class="sd">        upper (float) - upper bound</span>
+<span class="sd">        tolerance (float) - maximun acceptable error</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        x (numpy.array) - x values</span>
+<span class="sd">        y (numpy.array) - y values</span>
+<span class="sd">        n (int) - number of divisions</span>
+<span class="sd">        </span>
+<span class="sd">    """</span>
     
-    &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ceil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;M2&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-    &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[66]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;M2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt; &lt;span class="c"&gt;#totally cheating&lt;/span&gt;
-&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;static_interpolation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;M2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.005&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3.2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Static-Interpolation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;$x$&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;$f(x)$&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;o-k&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;f(x) for n={}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;f(x)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hey! We only needed {} intervals! No guess work&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">upper</span><span class="o">-</span> <span class="n">lower</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">M2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">tolerance</span><span class="p">)))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">fn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [66]:
+</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">M2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">))))</span> <span class="c">#totally cheating</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">static_interpolation</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="n">M2</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4000</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-.</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">"Static-Interpolation"</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">"$x$"</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">"$f(x)$"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'o-k'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"f(x) for n={}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">),</span> <span class="s">'-r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"f(x)"</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hey! We only needed {} intervals! No guess work"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
 Hey! We only needed 66.0 intervals! No guess work.
 
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtwAAAH+CAYAAACvJdnJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtwAAAH+CAYAAACvJdnJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8XWW99/3Pzs48NR0ydUiTzqVQtBUoUKHUEFEReCxL
 fUCUczi2Cs63Ugqe5znneB9AOU6IQ8u5VdCDyqpHBFQMLWGIFRDqYShNJ9K0aZqhbdpmHvf9x05C
 kibNtHeua+39fb9efZG1h2v9ki/iL6u/vS4QERERERERERERERERERERERERERERERERERERERER
@@ -3278,163 +3293,147 @@ ERERERERERERERERERERERERac48Tk9ARETMYFnWZUAFcD6wBhgNzLBte4OjExMRcTmv0xMQERHn
 WZbVE1hn2/YbwCjgDeAfwBZHJyYiIiIiEkssy+psWdYCp+chIhJLdIZbRESwLKufZVmDgDHA+6Ft
 Y5ydlYhIbIh3egIiImKEDKA18BWQbFnWD4Btzk5JRERERERERERERERERERERERERERERERERERE
 RERERERERERERERERERERERERERERERERKQZ+n+foqWEKw/lRwAAAABJRU5ErkJggg==
-"&gt;
-&lt;/div&gt;
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Great! We see that to only have an error of $0.005$ from our plot, we only need generate 66 intervals. We don't need to throw in a million intervals just 'to be safe', with this one liner we can mathimatically satisfy errors requirements and prevent a lot of guess work.</p>
+<p>There is however, still have a few problems. </p>
+<ol>
+<li>The peak was 'skiped' just a little.</li>
+<li>After the big hump we have quite a few intervals that really do nothing. What if calculating those points were expensive?</li>
+</ol>
+<p>Instead of using a static method of determining the ideal subdivisions, we can instead use an adaptive method. One that finds the intervals are redundant and seeks to avoid them.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Adaptive-Piecewise-Linear-Interpolation">Adaptive Piecewise Linear Interpolation<a class="anchor-link" href="#Adaptive-Piecewise-Linear-Interpolation">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To address the problem, we can use a recursive partitioning algorithm that discovers where $f$ is linear and where it is not and cluster the breakpoints effectively.</p>
+<p>But what defines a good interval? We can say that the interval is appropriate if the following conditions hold:</p>
+<p>$$ \left| f \left( \frac{x_{i} + x_{i+1}}{2} \right) - \frac{f(x_i) + f(x_{i+1})}{2} \right| \le \epsilon \text{ or } x_i - x_{i+1} \le h_{min}$$</p>
+<p>That this says is that if the difference between the linear approximation and the function is less than a tolerance, $\epsilon$ at the <strong>midpoint</strong> of the interval then it is a suitable fit. Moreover, we have a second statement that limits the size of the smallest interval by enforcing all intervals to be at least $h_{min}$ wide.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [102]:
+</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">adaptive_interpolation</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">hmin</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+    <span class="sd">"""Adaptive Interpolation of a linear piecewise function</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        fn (function) - function we are interpolatin</span>
+<span class="sd">        lower (float) - lower bound</span>
+<span class="sd">        upper (float) - upper bound</span>
+<span class="sd">        hmin (float) - lower bound on interval spaces</span>
+<span class="sd">        tolerance (float) - maximun acceptable error</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        x (numpy.array) - x values</span>
+<span class="sd">        y (numpy.array) - y values</span>
+<span class="sd">        </span>
+<span class="sd">    """</span>
+    <span class="n">fL</span><span class="p">,</span> <span class="n">fU</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">lower</span><span class="p">),</span> <span class="n">fn</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">upper</span> <span class="o">-</span> <span class="n">lower</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">hmin</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">])</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fL</span><span class="p">,</span> <span class="n">fU</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mid_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">])</span>
+        <span class="n">mid_fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">fL</span><span class="p">,</span> <span class="n">fU</span><span class="p">])</span>
+        <span class="n">f_mid_x</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">mid_x</span><span class="p">)</span>    
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">mid_fx</span> <span class="o">-</span> <span class="n">f_mid_x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span><span class="p">:</span>        
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">])</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fL</span><span class="p">,</span> <span class="n">fU</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">xl</span><span class="p">,</span> <span class="n">yl</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">adaptive_interpolation</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">mid_x</span><span class="p">,</span> <span class="n">hmin</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+            <span class="n">xr</span><span class="p">,</span> <span class="n">yr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">adaptive_interpolation</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mid_x</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">hmin</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">xl</span><span class="p">,</span> <span class="n">xr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span> 
+            <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yl</span><span class="p">,</span> <span class="n">yr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+            <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What we should notice with this method is that it should not pick a equally spaced interval. Instead the algorithm should realize that the linear intervals require less points while the inflection points should have more resolution.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [104]:
+</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">,</span> <span class="n">ay</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">adaptive_interpolation</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">hmin</span><span class="o">=.</span><span class="mo">05</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-.</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">"Adaptive-Interpolation"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ay</span><span class="p">,</span> <span class="s">'o-k'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"f(x) for n={}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">),</span> <span class="s">'-r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"f(x)"</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">1.6</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span> <span class="s">"Notice how many points we've saved!"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
 
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Great! We see that to only have an error of $0.005$ from our plot, we only need generate 66 intervals. We don&amp;#39;t need to throw in a million intervals just &amp;#39;to be safe&amp;#39;, with this one liner we can mathimatically satisfy errors requirements and prevent a lot of guess work.&lt;/p&gt;
-&lt;p&gt;There is however, still have a few problems. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The peak was &amp;#39;skiped&amp;#39; just a little.&lt;/li&gt;
-&lt;li&gt;After the big hump we have quite a few intervals that really do nothing. What if calculating those points were expensive?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Instead of using a static method of determining the ideal subdivisions, we can instead use an adaptive method. One that finds the intervals are redundant and seeks to avoid them.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Adaptive-Piecewise-Linear-Interpolation"&gt;Adaptive Piecewise Linear Interpolation&lt;a class="anchor-link" href="#Adaptive-Piecewise-Linear-Interpolation"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;To address the problem, we can use a recursive partitioning algorithm that discovers where $f$ is linear and where it is not and cluster the breakpoints effectively.&lt;/p&gt;
-&lt;p&gt;But what defines a good interval? We can say that the interval is appropriate if the following conditions hold:&lt;/p&gt;
-&lt;p&gt;$$ \left| f \left( \frac{x_{i} + x_{i+1}}{2} \right) - \frac{f(x_i) + f(x_{i+1})}{2} \right| \le \epsilon \text{ or } x_i - x_{i+1} \le h_{min}$$&lt;/p&gt;
-&lt;p&gt;That this says is that if the difference between the linear approximation and the function is less than a tolerance, $\epsilon$ at the &lt;strong&gt;midpoint&lt;/strong&gt; of the interval then it is a suitable fit. Moreover, we have a second statement that limits the size of the smallest interval by enforcing all intervals to be at least $h_{min}$ wide.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[102]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;adaptive_interpolation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hmin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Adaptive Interpolation of a linear piecewise function&lt;/span&gt;
-&lt;span class="sd"&gt;    &lt;/span&gt;
-&lt;span class="sd"&gt;    Attributes:&lt;/span&gt;
-&lt;span class="sd"&gt;        fn (function) - function we are interpolatin&lt;/span&gt;
-&lt;span class="sd"&gt;        lower (float) - lower bound&lt;/span&gt;
-&lt;span class="sd"&gt;        upper (float) - upper bound&lt;/span&gt;
-&lt;span class="sd"&gt;        hmin (float) - lower bound on interval spaces&lt;/span&gt;
-&lt;span class="sd"&gt;        tolerance (float) - maximun acceptable error&lt;/span&gt;
-&lt;span class="sd"&gt;    &lt;/span&gt;
-&lt;span class="sd"&gt;    Returns:&lt;/span&gt;
-&lt;span class="sd"&gt;        x (numpy.array) - x values&lt;/span&gt;
-&lt;span class="sd"&gt;        y (numpy.array) - y values&lt;/span&gt;
-&lt;span class="sd"&gt;        &lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;fL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fU&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;hmin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-        &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;fL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fU&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;mid_x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-        &lt;span class="n"&gt;mid_fx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;fL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fU&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-        &lt;span class="n"&gt;f_mid_x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mid_x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mid_fx&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;f_mid_x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;        
-            &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-            &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;fL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fU&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;xl&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yl&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;adaptive_interpolation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mid_x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hmin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="n"&gt;xr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;adaptive_interpolation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mid_x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hmin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;xl&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xr&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]))&lt;/span&gt; 
-            &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;yl&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yr&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]))&lt;/span&gt;
-            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;What we should notice with this method is that it should not pick a equally spaced interval. Instead the algorithm should realize that the linear intervals require less points while the inflection points should have more resolution.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[104]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;subplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;212&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ay&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;adaptive_interpolation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hmin&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mo"&gt;05&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3.2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Adaptive-Interpolation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ay&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;o-k&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;f(x) for n={}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;f(x)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1.6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Notice how many points we&amp;#39;ve saved!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;subplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;211&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;M2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gradient&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt; &lt;span class="c"&gt;#totally cheating&lt;/span&gt;
-&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;static_interpolation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;3.&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;M2&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;M2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tolerance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.005&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3.2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Static-Interpolation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;o-k&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;f(x) for n={}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;f(x)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
-    Out[104]:&lt;/div&gt;
-
-
-&lt;div class="output_text output_subarea output_pyout"&gt;
-&lt;pre&gt;
-&amp;lt;matplotlib.legend.Legend at 0x10bf0ea58&amp;gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsUAAADgCAYAAADrNRu0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">))))</span> <span class="c">#totally cheating</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">static_interpolation</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">3.</span><span class="p">,</span> <span class="n">M2</span><span class="o">=</span><span class="n">M2</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.005</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-.</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">"Static-Interpolation"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'o-k'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"f(x) for n={}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">),</span> <span class="s">'-r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"f(x)"</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">
+    Out[104]:</div>
+<div class="output_text output_subarea output_pyout">
+<pre>
+&lt;matplotlib.legend.Legend at 0x10bf0ea58&gt;
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsUAAADgCAYAAADrNRu0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlcVPX++PHXAAq4IGruaaC4b6W5oyIhmaF5o3Mz27x1
 025aWV9vpla3u6XVbfmZZXpv261rXQ+VldcMF0wJl5IWl1wb3NEUF0RAYOb3x5nBAQYGZIb5zMz7
 +XjMA845n/mcz8xb5D0f3udzQAghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGE
@@ -3758,16 +3757,12 @@ FuaiexExFRGT9fVO4BTQPFli5DLhRvRaRJxm7Siw+cy8HhEXADLzTj1m9WSE38D5zFzcqvluV4Pq
 EBGXgItULcRXgMuZ+WrLJrxNRcQD4CQwRbX/6xowDuahpEF1MA9l1L+qfwG8Y2359yqwF8xESW1q
 YS66FxEHqH5Et6P+u5eZN3xukiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJo+ofI5Vr
 hsggVYQAAAAASUVORK5CYII=
-"&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsUAAADgCAYAAADrNRu0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+">
+</img></div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsUAAADgCAYAAADrNRu0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3X18jfX/wPHXYWxuh9HGZra5v4kQY4ZZM9JQrSOSKLEK
 pVskqfyKSN9ChFJUKtcoWdKYuZkxMff32qS5Z0JsbHZ+f1znnHZ2PztzrnP2fj4ee9h197k+53pv
 9j6f874+FwghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBC
@@ -4152,48 +4147,39 @@ b4xxwvUVgGOtrR3HJM2n9hADag+tEb7HTwBvWWsfOU0xtYkWmEws1C6azxgzzxgzK1zPAF8Cap8s
 u3PKKtyhjDE/Bq4H5hGM//p7IAlqD600URzUHlojvKv+ZeD/OPX174PA74HaRCtNJhZqF81njFlO
 cBOdG6Z/t9Y+rH6TiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiLSr
 /wfjIT/jK89agQAAAABJRU5ErkJggg==
-"&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In the figure above, notice that although we are using half the number of divisions in the adaptive method,, we can obtain the similar resolution of the function while avoiding more ove the redundant points after $x=1.5$.&lt;/p&gt;
-&lt;p&gt;Below, I have also included another interpolation with a less error tolerances &lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[94]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Adaptive-Interpolation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;#Code removed for clarity&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsUAAAHsCAYAAAA6gNB7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the figure above, notice that although we are using half the number of divisions in the adaptive method,, we can obtain the similar resolution of the function while avoiding more ove the redundant points after $x=1.5$.</p>
+<p>Below, I have also included another interpolation with a less error tolerances </p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [94]:
+</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">title</span><span class="p">(</span><span class="s">"Adaptive-Interpolation"</span><span class="p">)</span> <span class="c">#Code removed for clarity</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsUAAAHsCAYAAAA6gNB7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xt8lOWd///XJJATSQiEcyAQQERRsbGeEBVinHW3Vvvd
 dFqrdev+2iZ9VFv9dg801e7X3f22obrtz1rbGuy2Vbu1ddAetNt2DMZt47lGBVREYEIgQIAAOUAS
 QjLfP2YGJiHJJMzhvu573s/HgwfMPTPXfU3eCp/c+dzXBSIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi
@@ -4695,22 +4681,79 @@ MJ0TGTCULHRepJ9lWeMtyxqTeF0EfBzoO7OE684JFaInWJZ1Hu9NBfZj27bXWJZVA2Dbdm3imOTM
 CIeAL9i2vTVb/c1Vg+VgWdZK4MvElxDvAK61bfuprHU4R1mW9SBwNjCeeP3XLUAAdD5k0mA56HzI
 jMRT9U8Az/Pex783ASeCzolMGkoWOi/Sz7KsU4k/ROdNbD+3bftbGjeJiIiIiIiIiIiIiIiIiIiI
 iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiFv9L1brNCbMot1nAAAAAElFTkSuQmCC
-"&gt;
-&lt;/div&gt;
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="to-borrow-from-the-language-of-kinematics-">To borrow from the language of kinematics.</h3>
+<p>With just 10 more points than our initial static interpolation we are been able to get incredible resolution at the maximum and minimums where the function has a very large acceleration. We also see that on the sides of the first bump and after the second, we dont use many points since we know that they behave linearly as a result of constant velocity!</p>
+</div>
+</div>
+</div>
+        </div>
 
-&lt;/div&gt;
+        <div class="meta">
+            <div>
+                    <a href="/tag/python.html" class="tag">python</a>
+                    <a href="/tag/numerical.html" class="tag">numerical</a>
+                    <a href="/tag/matplotlib.html" class="tag">matplotlib</a>
+            </div>
+            <div>
+                <a id="comments-button" class="comments_btn" href="#disqus_thread">Show comments</a>
+            </div>
+        </div>
+    </article>
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+<script type="text/javascript">
+(function () {
+    'use strict';
 
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="to-borrow-from-the-language-of-kinematics-"&gt;To borrow from the language of kinematics.&lt;/h3&gt;
-&lt;p&gt;With just 10 more points than our initial static interpolation we are been able to get incredible resolution at the maximum and minimums where the function has a very large acceleration. We also see that on the sides of the first bump and after the second, we dont use many points since we know that they behave linearly as a result of constant velocity!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</summary><category term="Python"></category><category term="Numerical"></category></entry></feed>
+    // Global object
+    var App = {};
+
+    // Create button
+    App.commentsButton = document.getElementById('comments-button');
+
+    App.commentsButton.onclick = function () {
+        // Remove button action on click
+        App.commentsButton.onclick = function () {
+        }
+
+        // Create comments container
+        App.disqusContainer = document.createElement('div');
+        App.disqusContainer.setAttribute('id', 'disqus_thread');
+        // App.disqusContainer.setAttribute('class', 'container');
+
+        // Append container to body or div
+        // document.body.appendChild( App.disqusContainer );
+        var container = document.getElementsByClassName('container post')[0];
+        container.appendChild(App.disqusContainer);
+
+        // Your Disqus shortname
+        App.disqus_shortname = 'jxnlgithub';
+
+        // Embed Disqus
+        var dsq = document.createElement('script');
+
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + App.disqus_shortname + '.disqus.com/embed.js';
+
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        window.scrollTo(0, dsq.offsetTop - 200);
+    };
+})();
+</script>
+
+
+    </body>
+</html>
